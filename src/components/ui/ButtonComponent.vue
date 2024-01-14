@@ -1,6 +1,6 @@
 <template>
 <button @click="handleClick">
-{{ props.name }}
+<slot name="ButtonContent"/>
 </button>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
-
+<slot />
 </template>
 
 <script>
 export default {
-  name: "Case.vue"
+  name: "CasePage.vue"
 }
 </script>
 
