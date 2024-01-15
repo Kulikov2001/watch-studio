@@ -21,5 +21,8 @@ const handleClick = async() =>{
 button{
   border-radius: 2em;
   padding: 1em;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
 }
 </style>

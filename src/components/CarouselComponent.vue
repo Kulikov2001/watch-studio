@@ -1,45 +1,54 @@
 <template>
-  <!-- Slider main container -->
-  <div class="swiper mySwiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div
-          class="swiper-slide"
-          v-for="(item,index) in slidesBand40"
-          :key="index"
-      >
-        <img
+  <swiper
+      :navigation="true"
+      :modules="modules"
+      class="mySwiper"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      :scrollbar="{draggable: true}"
+      :slides-per-view="5"
+
+      :centeredSlides="true"
+  >
+    <swiper-slide
+        v-for="(item,index) in allBands44"
+        v-slot="{isActive}"
+        :key="index"
+    >
+      <img
+          height="400"
           :src="item.pic"
+          style="position:relative; z-index:0"
+      />
+      <img
+          height="400"
+          v-if="isActive"
+          :src="mockCasePic"
+          style="position: absolute; z-index:1; top:0; left:0;"
         />
-      </div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script setup>
-import Swiper from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/vue';
 import { Navigation, Pagination,Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-var swiper = new Swiper('.swiper', {
-  modules: [Navigation, Pagination, Scrollbar],
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }
-});
-const slidesBand40 = [
+const modules = [Navigation, Pagination, Scrollbar];
+
+const onSwiper = (swiper) =>{
+  console.info(swiper);
+}
+const onSlideChange = () =>{
+  console.log('slide change');
+}
+
+const mockCasePic = 'https://i.postimg.cc/0NsWGB1V/41.webp';
+
+const allBands40 = [
   {
     type: 'bands',
     size: '40',
@@ -142,108 +151,142 @@ const slidesBand40 = [
     sku: 'Meleph-DSN-26-40-16'
   },
 ];
-const slidesBand45 = [
+const casesMaterials = ['Aluminum', 'Stainless Steel'];
+const allBands44 = [
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Альтаир',
-    pic: '../assets/44/bands/Альтаир/Altair-DSJ-01-44-BK.webp',
+    pic: 'https://i.postimg.cc/3wzBmzKc/Altair-DSJ-01-44-BK.webp',
     sku: 'Altair-DSJ-01-44-BK'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Альтаир',
-    pic: '../assets/44/bands/Альтаир/Altair-DSJ-01-44-BL.webp',
+    pic: 'https://i.postimg.cc/J7Nf75xL/Canopus-DSG-42-44-BL.webp',
     sku: 'Altair-DSJ-01-44-BL'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Альтаир',
-    pic: '../assets/44/bands/Альтаир/Altair-DSJ-01-44-LBG.webp',
+    pic: 'https://i.postimg.cc/6qffs3Ck/Altair-DSJ-01-44-LBG.webp',
     sku: 'Altair-DSJ-01-44-LBG'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Альтаир',
-    pic: '../assets/44/bands/Альтаир/Altair-DSJ-01-44-OR.webp',
+    pic: 'https://i.postimg.cc/zDCjHd4x/Altair-DSJ-01-44-OR.webp',
     sku: 'Altair-DSJ-01-44-OR'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Альтаир',
-    pic: '../assets/44/bands/Альтаир/Altair-DSJ-01-44-RD.webp',
+    pic: 'https://i.postimg.cc/Hs39BrY5/Altair-DSJ-01-44-RD.webp',
     sku: 'Altair-DSJ-01-44-RD'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Альтаир',
-    pic: '../assets/44/bands/Альтаир/Altair-DSJ-01-44-WH.webp',
+    pic: 'https://i.postimg.cc/c4dcRRS0/Altair-DSJ-01-44-WH.webp',
     sku: 'Altair-DSJ-01-44-WH'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-1.webp',
+    pic: 'https://i.postimg.cc/G3v4cV6m/Meleph-DSN-26-44-1.webp',
     sku: 'Meleph-DSN-26-44-1'
   },
 
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-2.webp',
+    pic: 'https://i.postimg.cc/D0hyJfRy/Meleph-DSN-26-44-2.webp',
     sku: 'Meleph-DSN-26-44-2'
   },
 
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-6.webp',
+    pic: 'https://i.postimg.cc/G3v4cV6m/Meleph-DSN-26-44-1.webp',
     sku: 'Meleph-DSN-26-44-6'
   },
 
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-7.webp',
+    pic: 'https://i.postimg.cc/Sx1sThYD/Meleph-DSN-26-44-7.webp',
     sku: 'Meleph-DSN-26-44-7'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-8.webp',
+    pic: 'https://i.postimg.cc/brx2GBJk/Meleph-DSN-26-40-8.webp',
     sku: 'Meleph-DSN-26-44-8'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-13.webp',
+    pic: 'https://i.postimg.cc/yYKRqsQP/Meleph-DSN-26-40-13.webp',
     sku: 'Meleph-DSN-26-44-13'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-15.webp',
+    pic: 'https://i.postimg.cc/K8vgzQy3/Meleph-DSN-26-40-15.webp',
     sku: 'Meleph-DSN-26-44-15'
   },
   {
     type: 'bands',
-    size: '45',
+    size: '44',
     brand: 'Мелеф',
-    pic: '../assets/44/bands/Мелеф/Meleph-DSN-26-44-16.webp',
+    pic: 'https://i.postimg.cc/TYcDfFBX/Meleph-DSN-26-40-16.webp',
     sku: 'Meleph-DSN-26-44-16'
   },
+];
+const collections = [];
+const sizes = [45,40];
+const allCases45 = [
+  {
+    type: 'cases',
+    size: '45',
+    material: 'Aluminum',
+    pic: 'https://i.postimg.cc/qBQxJNPR/45-aluminum-pink-nc-s9.webp',
+    sku: '45-aluminum-pink-nc-s9'
+  },
+  {
+    type: 'cases',
+    size: '45',
+    material: 'Aluminum',
+    pic: 'https://i.postimg.cc/MHs7dL7R/45-aluminum-midnight-nc-s9.webp',
+    sku: '45-aluminum-midnight-nc-s9'
+  },
+  {
+    type: 'cases',
+    size: '45',
+    material: 'Stainless steel',
+    pic: 'https://i.postimg.cc/Lsn7m3pF/45-stainless-gold-s9.webp',
+    sku: '45-stainless-gold-s9'
+  },
+  {
+    type: 'cases',
+    size: '45',
+    material: 'Stainless steel',
+    pic: 'https://i.postimg.cc/yNtGx31g/45-stainless-silver-s9.webp',
+    sku: '45-stainless-silver-s9'
+  },
+
 ];
 </script>
 <style scoped>
