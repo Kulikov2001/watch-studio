@@ -13,7 +13,7 @@ const props = defineProps({
   link: String
 })
 const handleClick = async() =>{
-  router.push(props.link);
+  router.push({ path: props.link ?? '/'});
 }
 </script>
 
