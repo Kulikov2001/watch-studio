@@ -1,0 +1,18 @@
+env:
+  browser: true
+  es2021: true
+  node: true
+extends:
+  - standard-with-typescript
+  - plugin:vue/vue3-recommended
+  - eslint:recommended
+  - @vue/typescript/recommended
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+ignorePatterns:
+  - dist/**/*
+  - node_modules/**/*
+plugins:
+  - vue
+rules: {}
