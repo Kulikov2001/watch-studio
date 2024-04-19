@@ -10,6 +10,12 @@ lerna-debug.log*
 node_modules
 .DS_Store
 dist
+public/carousel_content
+public/Nembus
+public/Premium Altair
+public/Premium Canopus
+public/Premium Meleph
+public/Vega
 dist-ssr
 coverage
 *.local
