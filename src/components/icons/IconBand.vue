@@ -1,0 +1,23 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3.5" y="0.5" width="7" height="19" stroke="black"/>
+    <rect x="3.5" y="6.5" width="7" height="7" rx="3.5" fill="#D9D9D9" stroke="black"/>
+    <rect x="4" y="4" width="6" height="6" fill="#EBEBEB"/>
+    <line y1="0.5" x2="14" y2="0.5" stroke="black"/>
+    <line y1="19.5" x2="14" y2="19.5" stroke="black"/>
+    <rect x="6" y="3" width="2" height="2" fill="black"/>
+    <rect x="6" y="6" width="2" height="2" fill="black"/>
+    <rect x="6" y="9" width="2" height="2" fill="black"/>
+  </svg>
+
+
+
+</template>
+
+<style scoped>
+
+</style>

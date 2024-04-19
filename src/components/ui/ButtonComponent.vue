@@ -1,14 +1,9 @@
 <template>
-  
-    <button>
-      <Transition>
-        <slot name="ButtonContent" v-if="!isMore" />
-      </Transition>
-      <Transition>
-        <slot name="ButtonContentMore" v-if="isMore" />
-      </Transition>
-    </button>
-  
+  <button>
+    <slot name="ButtonContent" />
+
+    <slot name="ButtonContentMore" />
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -34,15 +29,5 @@ button {
   border: none;
   cursor: pointer;
   font-size: 18px;
-}
-/* we will explain what these classes do next! */
-.v-enter-active,
-.v-leave-active {
-  transition: width .5s ease-out;
-}
-
-.v-enter-from,
-.v-leave-to {
-  width: auto;
 }
 </style>

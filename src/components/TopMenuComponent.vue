@@ -7,22 +7,24 @@
           :src="'https://www.lyambda.com/wp-content/themes/lyambda/image/logo.png'"
           alt="Lyambda"
       /></a>
-      <div name="collection" id="collection">
+      <!--div name="collection" id="collection">
         <button class="collection-btn" @click="collectionToggle">Коллекции</button>
         <div v-if="collectionsActive" class="collection__list">
-          <div
-            v-for="(item, index) in collectionsMock"
-            :value="item"
-            :key="index"
-            style="border-bottom: 1px solid grey"
-          >
-            <span class="collection-name">{{ item.toString() }}</span>
-          </div>
+          <TransitionGroup>
+            <div
+              v-for="(item, index) in collectionsMock"
+              :value="item"
+              :key="index"
+              style="border-bottom: 1px solid grey"
+            >
+              <span class="collection-name">{{ item.toString() }}</span>
+            </div>
+          </TransitionGroup>
         </div>
-      </div>
+      </div-->
       <button-component @click="emitSave" style="background: #007aff; color: white">
         <template #ButtonContent>
-          {{ 'Сохранить' }}
+          {{ 'Подробнее' }}
         </template>
       </button-component>
     </div>
@@ -97,5 +99,11 @@ const collectionsMock = ['Apple Watch Series 9', 'Apple Watch Hèrmes Series 9',
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 600px) {
+  .top-menu-container {
+    flex-wrap: wrap;
+  }
 }
 </style>
