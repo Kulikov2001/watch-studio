@@ -1,7 +1,7 @@
 <template>
   <div class="my-swiper-wrapper">
     <swiper
-      v-show="watchStore.state !== State.SERIES_CHOICE"
+      v-if="watchStore.state !== State.SERIES_CHOICE"
       :ref="swiperRef"
       :navigation="swiperOptions.navigation"
       :modules="modules"
@@ -69,22 +69,22 @@
 
 
     <swiper
-      v-show="watchStore.state === State.SERIES_CHOICE"
-      :ref="swiperRef"
+      v-if="watchStore.state === State.SERIES_CHOICE"
+      :ref="swiperRef2"
       :navigation="swiperOptions.navigation"
       :modules="modules"
-      class="mySwiper animated-fade"
-      @swiper="onSwiper"
+      class="mySwiper2 animated-fade"
+      @swiper="onSwiper2"
       @slideChange="onSlideChange"
       :scrollbar="{ draggable: true }"
-      :slides-per-view="1"
+      :slides-per-view="3"
       style="margin: 0 auto; width: 100%;user-select: none;"
       :centeredSlides="true"
       :lazyPreloadPrevNext="4"
-      :initialSlide="2"
+      :initialSlide="3"
       :slideToClickedSlide="true"
-      :speed="500"
-      :breakpoints="{ 1200: { slidesPerView: 3 }, 800: { slidesPerView:2 } }"
+      :speed="501"
+      :breakpoints="{2000: { slidesPerView: 3 }, 1920: { slidesPerView: 3 }, 1600: { slidesPerView: 3 }, 1300: { slidesPerView: 3 }, 900: { slidesPerView:2  }, 400: { slidesPerView: 1 }}"
 
     >
       <!--:breakpoints="{ 1200: { slidesPerView: 3 }, 800: { slidesPerView:1 } }" -->
@@ -95,13 +95,13 @@
         </div>
         <div class="swiper-lazy-preloader"></div>
       </swiper-slide>
-      <div class="swiper-button-prev bigswiper__btn" @click="swiperRef.slidePrev()" slot="button-prev"></div>
-      <div class="swiper-button-next bigswiper__btn" @click="swiperRef.slideNext()" slot="button-next"></div>
+      <div class="swiper-button-prev bigswiper__btn" @click="swiperRef2.slidePrev()" slot="button-prev"></div>
+      <div class="swiper-button-next bigswiper__btn" @click="swiperRef2.slideNext()" slot="button-next"></div>
     </swiper>
     <div class="about">
       <div class="selected-series" v-if="watchStore.state !== State.SERIES_CHOICE">
         {{ watchStore.currentWatch.series + ','}}
-        {{watchStore.currentWatch.size}}мм
+        {{watchStore.currentWatch.caseSize}}мм
         <!-- watchStore.colorDict.hasOwnProperty(watchStore.currentWatch.caseColor) ? watchStore.colorDict[watchStore.currentWatch.caseColor]  : '' }},-->
 
       </div>
@@ -123,8 +123,12 @@ import { EffectFade } from 'swiper/modules'
 const modules = [Navigation, Pagination, Scrollbar, EffectFade, Virtual]
 const watchStore = useWatchStore()
 const swiperRef: any = ref(null);
+const swiperRef2: any = ref(null);
 const onSwiper = (swiper: any) => {
   swiperRef.value = swiper
+}
+const onSwiper2 = (swiper: any) => {
+  swiperRef2.value = swiper
 }
 const swiperOptions = {
   navigation: {
@@ -146,6 +150,7 @@ const props = defineProps<{
     series?: string
     codename?: string
     name?: string
+    color?: string
   }>
   variations?: string
   gotoslide: number;
@@ -156,7 +161,7 @@ const { slideItems } = toRefs(props)
 const moveToSlide = (index: number) =>{
   if (index !== -1) {
     try {
-      swiperRef.value.slideTo(index);
+      watchStore.state !== State.SERIES_CHOICE ? swiperRef.value.slideTo(index) : swiperRef2.value.slideTo(index);
     } catch (e) {
       console.error(e);
     }
@@ -168,8 +173,7 @@ watch(()=> props.gotoslide, (selectedSlide) => {
 
 const computedItems = computed(() => slideItems.value)
 const onSlideChange = (swiper: any) => {
-  if (watchStore.currentWatch && computedItems.value.length > 2) {
-    console.log(computedItems.value)
+  if (watchStore.currentWatch && computedItems.value.length >= 2) {
     watchStore.currentWatch.size = computedItems.value[swiper.activeIndex].size ?? '41'
     if (watchStore.state === State.BAND_CHOICE) {
       watchStore.currentWatch.desc = computedItems.value[swiper.activeIndex].desc ?? 'desc'
@@ -181,11 +185,13 @@ const onSlideChange = (swiper: any) => {
       watchStore.currentWatch.bandMaterial = computedItems.value[swiper.activeIndex].material
 
     } else if (watchStore.state === State.CASE_CHOICE) {
-      watchStore.currentWatch.material = computedItems.value[swiper.activeIndex].material
+      watchStore.currentWatch.caseMaterial = computedItems.value[swiper.activeIndex].material
+      watchStore.currentWatch.caseColor = computedItems.value[swiper.activeIndex].color
       watchStore.currentWatch.sku_case = computedItems.value[swiper.activeIndex].sku
-      watchStore.currentWatch.caseSize = computedItems.value[swiper.activeIndex].size
     } else if (watchStore.state === State.SERIES_CHOICE){
       watchStore.currentWatch.series! = computedItems.value[swiper.activeIndex].name!
+    } else if (watchStore.state === State.SIZE_CHOICE){
+      watchStore.currentWatch.caseSize = computedItems.value[swiper.activeIndex].size
     }
   } else {
     //console.error(watchStore.currentWatch)
@@ -277,5 +283,6 @@ _38to40{
   height:30px;
   color: #989898;
   scale: .6;
+  z-index: 3;
 }
 </style>

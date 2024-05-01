@@ -13,14 +13,14 @@
         </Transition>
         <TransitionGroup name="list" tag="nav">
           <span
-            v-if="watchStore.state === State.SERIES_CHOICE"
+            v-if="false"
             v-for="(item, index) in watchStore.series"
             :key="index"
             style="padding: 0 0.2em"
             @click="handleMenuItemClick($event)"
           >
-            <b class="case-series" v-if="watchStore.currentWatch.series === item">{{ item }}</b>
-            <span class="case-series" v-else>{{ item }}</span>
+            <b id="series-item" v-if="watchStore.currentWatch.series === item">{{ item }}</b>
+            <span id="series-item" v-else>{{ item }}</span>
           </span>
         </TransitionGroup>
       </span>
@@ -46,8 +46,8 @@
       style="padding: 0 0.2em"
       @click="handleMenuItemClick($event)"
     >
-      <b class="band-material" v-if="watchStore.currentWatch.brand === item">{{ item }}</b>
-      <span class="band-material" v-else>{{ item }}</span>
+      <b id="series-item" v-if="watchStore.currentWatch.series === item">{{ item }}</b>
+      <span id="series-item" v-else>{{ item }}</span>
     </swiper-slide>
     <div class="swiper-button-prev bigswiper__btn" @click="swiperRefMenu.slidePrev()" slot="button-prev"></div>
     <div class="swiper-button-next bigswiper__btn" @click="swiperRefMenu.slideNext()" slot="button-next"></div>
@@ -75,8 +75,8 @@
             style="padding: 0 0.2em"
             @click="handleMenuItemClick($event)"
           >
-            <b class="case-size" v-if="watchStore.currentWatch.caseSize === item">{{ item.toString() }}мм</b>
-            <span class="case-size" v-else>{{ item.toString() }}мм</span>
+            <b id="size-item" v-if="watchStore.currentWatch.caseSize === item">{{ item.toString() }}мм</b>
+            <span id="size-item" v-else>{{ item.toString() }}мм</span>
           </span>
         </TransitionGroup>
       </span>
@@ -104,8 +104,8 @@
             style="padding: 0 0.2em"
             @click="handleMenuItemClick($event)"
           >
-            <b class="case-material" v-if="watchStore.currentWatch.material === item">{{ item }}</b>
-            <span class="case-material" v-else>{{ item }}</span>
+            <b id="material-item" v-if="watchStore.currentWatch.material === item">{{ item }}</b>
+            <span id="material-item" v-else>{{ item }}</span>
           </span>
         </TransitionGroup>
       </span>
@@ -133,8 +133,8 @@
 
       @click="handleMenuItemClick($event)"
     >
-      <b class="band-material" v-if="watchStore.currentWatch.brand === item">{{ item }}</b>
-      <span class="band-material" v-else>{{ item }}</span>
+      <b id="brand-item" v-if="watchStore.currentWatch.brand === item">{{ item }}</b>
+      <span id="brand-item" v-else>{{ item }}</span>
     </swiper-slide>
     <div class="swiper-button-prev bigswiper__btn" @click="swiperRefMenu.slidePrev()" slot="button-prev"></div>
     <div class="swiper-button-next bigswiper__btn" @click="swiperRefMenu.slideNext()" slot="button-next"></div>
@@ -319,6 +319,11 @@ button{
   overflow: hidden;
   word-break: keep-all;
   max-width: 300px;
+}
+span[id$=item], b[id$=item]{
+  display:block;
+  padding: 1em .5em;
+  text-align: center;
 }
 /*.menu__btn-wrapper > nav:after{
 //  position: absolute;

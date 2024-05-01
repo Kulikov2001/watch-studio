@@ -41,19 +41,35 @@ let slideItem = ref<
     series?: string
     codename?: string
     name?: string
+    color?: string
   }>
 >([])
 const triggeredSlideIndex = ref(2);
 const handleSubItem = (event: Event)=>{
-  if (event.target) {
-  triggeredSlideIndex.value = slideItem.value.findIndex((slideitem)=>{
-    return slideitem.size === parseInt((event.target as HTMLElement).innerText).toString() ||
-      slideitem.brand === (event.target as HTMLElement).innerText ||
-      slideitem.size === (parseInt((event.target as HTMLElement).innerText).toString() + 'мм') ||
-      (slideitem.hasOwnProperty('name') ? (slideitem.name === watchStore.newSeries.filter(item => item.name === (event.target as HTMLElement).innerText)[0].name) : false) ||
-      slideitem.material === Object.keys(watchStore.materialDict).find(key => watchStore.materialDict[key] === (event.target as HTMLElement).innerText)
-      console.log(slideitem.material)
-  });
+  if ((event.target as HTMLElement).id) {
+    const id: string | null = (event.target as HTMLElement).id ?? null;
+  triggeredSlideIndex.value = slideItem.value.findIndex((slideitem)=> {
+    switch (id) {
+      case 'series-item':
+        return slideitem.name === (event.target as HTMLElement).innerText;
+      case 'size-item':
+        return slideitem.size === (event.target as HTMLElement).innerText
+      case 'material-item':
+        return Object.keys(watchStore.materialDict).find(key => watchStore.materialDict[key] === (event.target as HTMLElement).innerText);
+      case 'brand-item':
+        return false;
+      default:
+        console.error('Выбранный элемент меню не соответствует ни одному из условий. Проверьте handleSubItem в StartPage. Event:' + event);
+        break;
+    }
+
+    // return slideitem.size === parseInt((event.target as HTMLElement).innerText).toString() ||
+    //   slideitem.brand === (event.target as HTMLElement).innerText ||
+    //   slideitem.size === (parseInt((event.target as HTMLElement).innerText).toString() + 'мм') ||
+    //   (slideitem.hasOwnProperty('name') ? (slideitem.name === watchStore.newSeries.filter(item => item.name === (event.target as HTMLElement).innerText)[0].name) : false) ||
+    //   slideitem.material === Object.keys(watchStore.materialDict).find(key => watchStore.materialDict[key] === (event.target as HTMLElement).innerText);
+    //   //slideitem.name === (event.target as HTMLElement).innerText;
+  })
   } else {
     console.error('no console event')
   }
@@ -79,8 +95,9 @@ const changeToSeries = async () => {
   //watchStore.state = State.SERIES_CHOICE
   document.querySelector('.animated-fade')!.classList.add('fade-out')
   setTimeout(() => {
-    watchStore.state = State.SERIES_CHOICE
-    slideItem.value = watchStore.newSeries
+    watchStore.state = State.SERIES_CHOICE;
+    slideItem.value = watchStore.newSeries;
+    console.info(watchStore.state);
     document.querySelector('.animated-fade')!.classList.remove('fade-out')
   },1000);
 }
@@ -89,7 +106,12 @@ const changeToSize = async () => {
   document.querySelector('.animated-fade')!.classList.add('fade-out')
   setTimeout(() => {
     watchStore.state = State.SIZE_CHOICE
-    slideItem.value = watchStore.newCase
+    slideItem.value = watchStore.newCase.filter((item) => item.series === watchStore.currentWatch.series).reduce((acc:any, item:any) => {
+      if (!acc.some((i:any) => i.size === item.size)) {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
     document.querySelector('.animated-fade')!.classList.remove('fade-out')
   },1000);
 }
@@ -98,7 +120,7 @@ const changeToCase = async () => {
   document.querySelector('.animated-fade')!.classList.add('fade-out')
   setTimeout(() => {
     watchStore.state = State.CASE_CHOICE
-    slideItem.value = watchStore.newCase.filter((item) => item.series === watchStore.currentWatch.series);
+    slideItem.value = watchStore.newCase.filter((item) => item.series === watchStore.currentWatch.series && item.size === watchStore.currentWatch.caseSize);
     document.querySelector('.animated-fade')!.classList.remove('fade-out')
   }, 1000)
 }
@@ -122,7 +144,8 @@ onMounted(()=>{
   changeToBand();
 })
 const handleSave = async () => {
-  window.location.href = watchStore.currentWatch.href ?? window.location.href
+  //window.location.href = watchStore.currentWatch.href ?? window.location.href
+  window.location.href = 'https://lyambda.com/?s=' + watchStore.currentWatch.sku_band;
 }
 // function runArrayPicToLocal(arr) {
 //   arr.forEach(function (elem) {
