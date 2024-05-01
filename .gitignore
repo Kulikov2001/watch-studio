@@ -19,7 +19,12 @@ public/Vega
 dist-ssr
 coverage
 *.local
-
+*.cmd
+*.bat
+*.webp
+*.png
+*.py
+*.txt
 /cypress/videos/
 /cypress/screenshots/
 

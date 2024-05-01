@@ -1,66 +1,66 @@
 export const newSeries = [
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S1/Series_S1.png",
+    "pic": "./public/size-series/S1/Series_S1.webp",
     "name": "Серия 1",
     "codename": "S1"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S2/Series_S2.png",
+    "pic": "./public/size-series/S2/Series_S2.webp",
     "name": "Серия 2",
     "codename": "S2"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S3/Series_S3.png",
+    "pic": "./public/size-series/S3/Series_S3.webp",
     "name": "Серия 3",
     "codename": "S3"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S4/Series_S4.png",
+    "pic": "./public/size-series/S4/Series_S4.webp",
     "name": "Серия 4",
     "codename": "S4"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S5/Series_S5.png",
+    "pic": "./public/size-series/S5/Series_S5.webp",
     "name": "Серия 5",
     "codename": "S5"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S6/Series_S6.png",
+    "pic": "./public/size-series/S6/Series_S6.webp",
     "name": "Серия 6",
     "codename": "S6"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S7/Series_S7.png",
+    "pic": "./public/size-series/S7/Series_S7.webp",
     "name": "Серия 7",
     "codename": "S7"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S8/Series_S8.png",
+    "pic": "./public/size-series/S8/Series_S8.webp",
     "name": "Серия 8",
     "codename": "S8"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/S9/Series_S9.png",
+    "pic": "./public/size-series/S9/Series_S9.webp",
     "name": "Серия 9",
     "codename": "S9"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/Ultra/Ultra.png",
+    "pic": "./public/size-series/Ultra/Ultra.webp",
     "name": "Ultra",
     "codename": "Ultra"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/Ultra 2/Ultra 2.png",
+    "pic": "./public/size-series/Ultra 2/Ultra 2.webp",
     "name": "Ultra 2",
     "codename": "Ultra 2"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/Серия SE (1nd generation)/Series SE (1nd generation).png",
+    "pic": "./public/size-series/Серия SE (1nd generation)/Series SE (1nd generation).webp",
     "name": "Серия SE (1-ое поколение)",
     "codename": "SE1"
   },
   {
-    "pic": "./public/carousel_content/1200x1200/Часы Серии/Серия SE (2nd generation)/Series SE (2nd generation).png",
+    "pic": "./public/size-series/Серия SE (2nd generation)/Series SE (2nd generation).webp",
     "name": "Серия SE (2-ое поколение)",
     "codename": "SE2"
   }

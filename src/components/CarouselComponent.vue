@@ -1,7 +1,7 @@
 <template>
   <div class="my-swiper-wrapper">
     <swiper
-      v-if="watchStore.state !== State.SERIES_CHOICE"
+      v-show="watchStore.state !== State.SERIES_CHOICE"
       :ref="swiperRef"
       :navigation="swiperOptions.navigation"
       :modules="modules"
@@ -18,6 +18,7 @@
       :speed="500"
       :breakpoints="{ 1200: { slidesPerView: 5 }, 800: { slidesPerView: 3 } }"
     >
+
       <img
         height="400"
         v-if="watchStore.state === State.CASE_CHOICE"
@@ -51,9 +52,15 @@
         :class="adaptiveSize"
         style="z-index: 1;user-select: none;"
       />
+
       <!-- 42/44/45/49 mm -->
-      <swiper-slide v-for="(item, index) in computedItems" :key="index">
+      <swiper-slide v-for="(item, index) in computedItems" :key="index" :virtual-index="index">
+
         <img height="400" :src="item.pic" loading="lazy" style="position: relative; z-index: 0;user-select: none;" />
+        <div class="desc">
+          {{ item.name ?? ''}}
+        </div>
+        <!-- :class="{'imgseries': watchStore.state === State.SERIES_CHOICE}"-->
         <div class="swiper-lazy-preloader"></div>
       </swiper-slide>
       <div class="swiper-button-prev bigswiper__btn" @click="swiperRef.slidePrev()" slot="button-prev"></div>
@@ -62,31 +69,37 @@
 
 
     <swiper
-      v-if="watchStore.state === State.SERIES_CHOICE"
+      v-show="watchStore.state === State.SERIES_CHOICE"
       :ref="swiperRef"
-      :navigation="true"
+      :navigation="swiperOptions.navigation"
       :modules="modules"
       class="mySwiper animated-fade"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
       :scrollbar="{ draggable: true }"
-      :slides-per-view="2"
+      :slides-per-view="1"
       style="margin: 0 auto; width: 100%;user-select: none;"
       :centeredSlides="true"
       :lazyPreloadPrevNext="4"
       :initialSlide="2"
       :slideToClickedSlide="true"
       :speed="500"
-      :breakpoints="{ 1200: { slidesPerView: 3 }, 800: { slidesPerView:1 } }"
+      :breakpoints="{ 1200: { slidesPerView: 3 }, 800: { slidesPerView:2 } }"
+
     >
-      <swiper-slide v-for="(item, index) in computedItems" :key="index">
+      <!--:breakpoints="{ 1200: { slidesPerView: 3 }, 800: { slidesPerView:1 } }" -->
+      <swiper-slide v-for="(item, index) in computedItems" :key="index" :virtual-index="index">
         <img height="400" :src="item.pic" loading="lazy" style="position: relative; z-index: 0;user-select: none;" />
+        <div class="desc">
+          {{ item.name ?? ''}}
+        </div>
         <div class="swiper-lazy-preloader"></div>
       </swiper-slide>
-
+      <div class="swiper-button-prev bigswiper__btn" @click="swiperRef.slidePrev()" slot="button-prev"></div>
+      <div class="swiper-button-next bigswiper__btn" @click="swiperRef.slideNext()" slot="button-next"></div>
     </swiper>
     <div class="about">
-      <div class="selected-series">
+      <div class="selected-series" v-if="watchStore.state !== State.SERIES_CHOICE">
         {{ watchStore.currentWatch.series + ','}}
         {{watchStore.currentWatch.size}}мм
         <!-- watchStore.colorDict.hasOwnProperty(watchStore.currentWatch.caseColor) ? watchStore.colorDict[watchStore.currentWatch.caseColor]  : '' }},-->
@@ -100,14 +113,14 @@
 
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules'
+import { Navigation, Pagination, Scrollbar, Virtual } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useWatchStore, State } from '@/stores/watch'
 import {computed, ref, toRefs, watch} from 'vue'
 import { EffectFade } from 'swiper/modules'
-const modules = [Navigation, Pagination, Scrollbar, EffectFade]
+const modules = [Navigation, Pagination, Scrollbar, EffectFade, Virtual]
 const watchStore = useWatchStore()
 const swiperRef: any = ref(null);
 const onSwiper = (swiper: any) => {
@@ -119,6 +132,7 @@ const swiperOptions = {
     nextEl: '.swiper-button-next',
   },
 };
+const slidesPerViewComputed = computed(()=> watchStore.state === State.SERIES_CHOICE ? 3 : 5);
 const props = defineProps<{
   slideItems: Array<{
     type?: string
@@ -171,7 +185,7 @@ const onSlideChange = (swiper: any) => {
       watchStore.currentWatch.sku_case = computedItems.value[swiper.activeIndex].sku
       watchStore.currentWatch.caseSize = computedItems.value[swiper.activeIndex].size
     } else if (watchStore.state === State.SERIES_CHOICE){
-      watchStore.currentWatch.series! = computedItems.value[swiper.activeIndex].codename!
+      watchStore.currentWatch.series! = computedItems.value[swiper.activeIndex].name!
     }
   } else {
     //console.error(watchStore.currentWatch)

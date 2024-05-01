@@ -1,121 +1,121 @@
 export const newBands = [
   {
-  'pic': './public/Nembus/40/Nembus_LWA-41-40-BK_p_k.png',
+  'pic': './public/Nembus/40/Nembus_LWA-41-40-BK_p_k.webp',
   'sku': 'Nembus_LWA-41-40-BK_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '40'
 }, {
-  'pic': './public/Nembus/40/Nembus_LWA-41-40-BL_p_k.png',
+  'pic': './public/Nembus/40/Nembus_LWA-41-40-BL_p_k.webp',
   'sku': 'Nembus_LWA-41-40-BL_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '40'
 }, {
-  'pic': './public/Nembus/40/Nembus_LWA-41-40-BR_p_k.png',
+  'pic': './public/Nembus/40/Nembus_LWA-41-40-BR_p_k.webp',
   'sku': 'Nembus_LWA-41-40-BR_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '40'
 }, {
-  'pic': './public/Nembus/40/Nembus_LWA-41-40-PK_p_k.png',
+  'pic': './public/Nembus/40/Nembus_LWA-41-40-PK_p_k.webp',
   'sku': 'Nembus_LWA-41-40-PK_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '40'
 }, {
-  'pic': './public/Nembus/40/Nembus_LWA-41-40-RD_p_k.png',
+  'pic': './public/Nembus/40/Nembus_LWA-41-40-RD_p_k.webp',
   'sku': 'Nembus_LWA-41-40-RD_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '40'
 }, {
-  'pic': './public/Nembus/40/Nembus_LWA-41-40-WH_p_k.png',
+  'pic': './public/Nembus/40/Nembus_LWA-41-40-WH_p_k.webp',
   'sku': 'Nembus_LWA-41-40-WH_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '40'
 }, {
-  'pic': './public/Nembus/44/Nembus_LWA-41-44-BK_p_k.png',
+  'pic': './public/Nembus/44/Nembus_LWA-41-44-BK_p_k.webp',
   'sku': 'Nembus_LWA-41-44-BK_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '44'
 }, {
-  'pic': './public/Nembus/44/Nembus_LWA-41-44-BL_p_k.png',
+  'pic': './public/Nembus/44/Nembus_LWA-41-44-BL_p_k.webp',
   'sku': 'Nembus_LWA-41-44-BL_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '44'
 }, {
-  'pic': './public/Nembus/44/Nembus_LWA-41-44-BR_p_k.png',
+  'pic': './public/Nembus/44/Nembus_LWA-41-44-BR_p_k.webp',
   'sku': 'Nembus_LWA-41-44-BR_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '44'
 }, {
-  'pic': './public/Nembus/44/Nembus_LWA-41-44-PK_p_k.png',
+  'pic': './public/Nembus/44/Nembus_LWA-41-44-PK_p_k.webp',
   'sku': 'Nembus_LWA-41-44-PK_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '44'
 }, {
-  'pic': './public/Nembus/44/Nembus_LWA-41-44-RD_p_k.png',
+  'pic': './public/Nembus/44/Nembus_LWA-41-44-RD_p_k.webp',
   'sku': 'Nembus_LWA-41-44-RD_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '44'
 }, {
-  'pic': './public/Nembus/44/Nembus_LWA-41-44-WH_p_k.png',
+  'pic': './public/Nembus/44/Nembus_LWA-41-44-WH_p_k.webp',
   'sku': 'Nembus_LWA-41-44-WH_p_k',
   'brand': 'Nembus', 'material': 'leather',
   'size': '44'
 }, {
-  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-BK_p_k.png',
+  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-BK_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-40-BK_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '40'
 }, {
-  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-LBG_p_k.png',
+  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-LBG_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-40-LBG_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '40'
 }, {
-  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-OL_p_k.png',
+  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-OL_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-40-OL_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '40'
 }, {
-  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-OR_p_k.png',
+  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-OR_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-40-OR_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '40'
 }, {
-  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-RD_p_k.png',
+  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-RD_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-40-RD_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '40'
 }, {
-  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-WH_p_k.png',
+  'pic': './public/Premium Altair/40/Premium_Altair_DSJ-01-40-WH_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-40-WH_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '40'
 }, {
-  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-BK_p_k.png',
+  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-BK_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-44-BK_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '44'
 }, {
-  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-BL_p_k.png',
+  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-BL_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-44-BL_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '44'
 }, {
-  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-LBG_p_k.png',
+  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-LBG_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-44-LBG_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '44'
 }, {
-  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-OL_p_k.png',
+  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-OL_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-44-OL_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '44'
 }, {
-  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-OR_p_k.png',
+  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-OR_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-44-OR_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '44'
 }, {
-  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-RD_p_k.png',
+  'pic': './public/Premium Altair/44/Premium_Altair_DSJ-01-44-RD_p_k.webp',
   'sku': 'Premium_Altair_DSJ-01-44-RD_p_k',
   'brand': 'Premium Altair', 'material': 'silicone',
   'size': '44'
