@@ -11,7 +11,7 @@ const router = createRouter({
 			path: '/series',
 			name: 'Серия',
 			component: () => import('@/components/MainLayout.vue'),
-			meta: { title: 'Лямбда карусель', transition: 'slide-left' },
+			meta: { name: 'series', title: 'Лямбда карусель', transition: 'slide-left' },
 			children: [
 				{
 					path: '',
@@ -25,7 +25,7 @@ const router = createRouter({
 			path: '/size',
 			name: 'Размер',
 			component: () => import('@/components/MainLayout.vue'),
-			meta: { title: 'Лямбда Размер', transition: 'slide-left' },
+			meta: { name: 'size', title: 'Лямбда Размер', transition: 'slide-left' },
 			children: [
 				{
 					path: '',
@@ -39,7 +39,7 @@ const router = createRouter({
 			path: '/case',
 			name: 'Кейсы',
 			component: () => import('@/components/MainLayout.vue'),
-			meta: { title: 'Лямбда Кейсы', transition: 'slide-left' },
+			meta: {  name: 'case', title: 'Лямбда Кейсы', transition: 'slide-left' },
 			children: [
 				{
 					path: '',
@@ -53,12 +53,12 @@ const router = createRouter({
 			path: '/bands',
 			name: 'Ремешки',
 			component: () => import('@/components/MainLayout.vue'),
-			meta: { title: 'Лямбда Ремешки', transition: 'slide-left' },
+			meta: { name: 'band', title: 'Лямбда Ремешки', transition: 'slide-left' },
 			children: [
 				{
 					path: '',
 					name: 'Ремешки',
-					meta: {name: 'bands', title: 'Лямбда карусель', transition: 'slide-left' },
+					meta: {name: 'band', title: 'Лямбда карусель', transition: 'slide-left' },
 					component: () => import('@/pages/BandPage.vue')
 				}
 			]

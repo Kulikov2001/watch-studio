@@ -27,19 +27,19 @@
 			/>
 			<!--
       {
-          '38to40': watchStore.currentWatch.size === '38' && computedItems[swiperRef.activeIndex].size === '40',
-          '38to41': watchStore.currentWatch.size === '38' && computedItems[swiperRef.activeIndex].size === '41',
-          '40to41': watchStore.currentWatch.size === '40' && computedItems[swiperRef.activeIndex].size === '41',
-          '41to38': watchStore.currentWatch.size === '41' && computedItems[swiperRef.activeIndex].size === '38',
-          '42to44': watchStore.currentWatch.size === '42' && computedItems[swiperRef.activeIndex].size === '44',
-          '42to45': watchStore.currentWatch.size === '42' && computedItems[swiperRef.activeIndex].size === '45',
-          '42to49': watchStore.currentWatch.size === '42' && computedItems[swiperRef.activeIndex].size === '49',
-          '44to42': watchStore.currentWatch.size === '44' && computedItems[swiperRef.activeIndex].size === '42',
-          '44to45': watchStore.currentWatch.size === '44' && computedItems[swiperRef.activeIndex].size === '45',
-          '44to49': watchStore.currentWatch.size === '44' && computedItems[swiperRef.activeIndex].size === '49',
-          '49to42': watchStore.currentWatch.size === '49' && computedItems[swiperRef.activeIndex].size === '42',
-          '49to45': watchStore.currentWatch.size === '49' && computedItems[swiperRef.activeIndex].size === '45',
-          '49to44': watchStore.currentWatch.size === '49' && computedItems[swiperRef.activeIndex].size === '44'
+          '38to40': watchStore.currentWatch.size === '38' && slideItems[swiperRef.activeIndex].size === '40',
+          '38to41': watchStore.currentWatch.size === '38' && slideItems[swiperRef.activeIndex].size === '41',
+          '40to41': watchStore.currentWatch.size === '40' && slideItems[swiperRef.activeIndex].size === '41',
+          '41to38': watchStore.currentWatch.size === '41' && slideItems[swiperRef.activeIndex].size === '38',
+          '42to44': watchStore.currentWatch.size === '42' && slideItems[swiperRef.activeIndex].size === '44',
+          '42to45': watchStore.currentWatch.size === '42' && slideItems[swiperRef.activeIndex].size === '45',
+          '42to49': watchStore.currentWatch.size === '42' && slideItems[swiperRef.activeIndex].size === '49',
+          '44to42': watchStore.currentWatch.size === '44' && slideItems[swiperRef.activeIndex].size === '42',
+          '44to45': watchStore.currentWatch.size === '44' && slideItems[swiperRef.activeIndex].size === '45',
+          '44to49': watchStore.currentWatch.size === '44' && slideItems[swiperRef.activeIndex].size === '49',
+          '49to42': watchStore.currentWatch.size === '49' && slideItems[swiperRef.activeIndex].size === '42',
+          '49to45': watchStore.currentWatch.size === '49' && slideItems[swiperRef.activeIndex].size === '45',
+          '49to44': watchStore.currentWatch.size === '49' && slideItems[swiperRef.activeIndex].size === '44'
         }
       -->
 			<img
@@ -53,7 +53,7 @@
 
 			<!-- 42/44/45/49 mm -->
 			<swiper-slide
-				v-for="(item, index) in computedItems"
+				v-for="(item, index) in slideItems"
 				:key="index"
 				:virtual-index="index"
 				style="
@@ -114,7 +114,7 @@
 		>
 			<!--:breakpoints="{ 1200: { slidesPerView: 3 }, 800: { slidesPerView:1 } }" -->
 			<swiper-slide
-				v-for="(item, index) in computedItems"
+				v-for="(item, index) in slideItems"
 				:key="index"
 				:virtual-index="index"
 				style="
@@ -209,7 +209,7 @@ const swiperOptions = {
 	}
 }
 const props = defineProps<{
-	slideItems: Array<{
+	slideItems?: Array<{
 		type?: string
 		href?: string
 		desc?: string
@@ -224,7 +224,7 @@ const props = defineProps<{
 		color?: string
 	}>
 	variations?: string
-	gotoslide: number
+	gotoslide?: number
 }>()
 
 //const { slideItems } = toRefs(props)
@@ -243,30 +243,30 @@ const moveToSlide = (index: number) => {
 watch(
 	() => props.gotoslide,
 	(selectedSlide) => {
-		moveToSlide(selectedSlide)
+		moveToSlide(selectedSlide??1)
 	}
 )
 
-const computedItems = computed(() => slideItems.value)
+//const slideItems = computed(() => slideItems.value)
 const onSlideChange = (swiper: any) => {
-	if (watchStore.currentWatch && computedItems.value.length >= 2) {
-		watchStore.currentWatch.size = computedItems.value[swiper.activeIndex].size ?? '41'
+	if (watchStore.currentWatch && slideItems.value.length >= 2) {
+		watchStore.currentWatch.size = slideItems.value[swiper.activeIndex].size ?? '41'
 		if (watchStore.state === State.BAND_CHOICE) {
-			watchStore.currentWatch.desc = computedItems.value[swiper.activeIndex].desc ?? 'desc'
-			watchStore.currentWatch.brand = computedItems.value[swiper.activeIndex].brand ?? ''
+			watchStore.currentWatch.desc = slideItems.value[swiper.activeIndex].desc ?? 'desc'
+			watchStore.currentWatch.brand = slideItems.value[swiper.activeIndex].brand ?? ''
 			watchStore.currentWatch.href =
-				computedItems.value[swiper.activeIndex].href ?? 'https://lyambda.com/'
-			watchStore.currentWatch.sku_band = computedItems.value[swiper.activeIndex].sku
-			watchStore.currentWatch.bandSize = computedItems.value[swiper.activeIndex].size
-			watchStore.currentWatch.bandMaterial = computedItems.value[swiper.activeIndex].material
+				slideItems.value[swiper.activeIndex].href ?? 'https://lyambda.com/'
+			watchStore.currentWatch.sku_band = slideItems.value[swiper.activeIndex].sku
+			watchStore.currentWatch.bandSize = slideItems.value[swiper.activeIndex].size
+			watchStore.currentWatch.bandMaterial = slideItems.value[swiper.activeIndex].material
 		} else if (watchStore.state === State.CASE_CHOICE) {
-			watchStore.currentWatch.caseMaterial = computedItems.value[swiper.activeIndex].material
-			watchStore.currentWatch.caseColor = computedItems.value[swiper.activeIndex].color
-			watchStore.currentWatch.sku_case = computedItems.value[swiper.activeIndex].sku
+			watchStore.currentWatch.caseMaterial = slideItems.value[swiper.activeIndex].material
+			watchStore.currentWatch.caseColor = slideItems.value[swiper.activeIndex].color
+			watchStore.currentWatch.sku_case = slideItems.value[swiper.activeIndex].sku
 		} else if (watchStore.state === State.SERIES_CHOICE) {
-			watchStore.currentWatch.series! = computedItems.value[swiper.activeIndex].name!
+			watchStore.currentWatch.series! = slideItems.value[swiper.activeIndex].name!
 		} else if (watchStore.state === State.SIZE_CHOICE) {
-			watchStore.currentWatch.caseSize = computedItems.value[swiper.activeIndex].size
+			watchStore.currentWatch.caseSize = slideItems.value[swiper.activeIndex].size
 		}
 	} else {
 		//console.error(watchStore.currentWatch)
@@ -287,10 +287,10 @@ const adaptiveSize = computed(
 
 //     break;
 //     case State.CASE_CHOICE:
-//       Swiper.slideTo(computedItems.value.map((obj) => obj.sku).indexOf(watchStore.currentWatch.sku_case),500);
+//       Swiper.slideTo(slideItems.value.map((obj) => obj.sku).indexOf(watchStore.currentWatch.sku_case),500);
 //     break;
 //     case State.BAND_CHOICE:
-//       Swiper.slideTo(computedItems.value.map((obj) => obj.sku).indexOf(watchStore.currentWatch.sku_band),500);
+//       Swiper.slideTo(slideItems.value.map((obj) => obj.sku).indexOf(watchStore.currentWatch.sku_band),500);
 //     break;
 //   }
 // });

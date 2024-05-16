@@ -52,7 +52,7 @@ export const useWatchStore = defineStore('watch', () => {
 	const bandsBrand = Array.from(new Set(newBands.map((item) => item.brand)))
 	const sizes = Array.from(new Set(newCase.map((item) => item.size)))
 	const series = Array.from(new Set(newSeries.map((item) => item.name)))
-
+	const bandsMaterial = Array.from(new Set(newBands.map((item) => item.material?? 'ceramic')))
 	const slideItems = ref<ISlideItem[]>([]);
 	const currentWatch = ref<Watch>({
 		size: '44',
@@ -97,6 +97,18 @@ export const useWatchStore = defineStore('watch', () => {
 		return result
 	}
 	// eslint-enable @typescript-eslint/no-explicit-any
+	const setSlideItemsToSeries = async () => {
+		slideItems.value = newSeries;
+	}
+	const setSlideItemsToCase = async () => {
+		slideItems.value = newCase;
+	}
+	const setSlideItemsToBands = async () => {
+		slideItems.value = newBands;
+	}
+	const setSlideItemsToSizes = async () => {
+		slideItems.value = newCase.filter((item) => item.size === currentWatch.value.size);
+	}
 	return {
 		state,
 		casesMaterials,
@@ -111,9 +123,13 @@ export const useWatchStore = defineStore('watch', () => {
 		newSeries,
 		colorDict,
 		materialDict,
+		bandsMaterial,
 		currMenuItems,
 		currAdditionalItems,
 		slideItems,
-		ISlideItem,
+		setSlideItemsToSeries,
+		setSlideItemsToCase,
+		setSlideItemsToBands,
+		setSlideItemsToSizes,
 	}
 })

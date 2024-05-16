@@ -10,135 +10,18 @@
 			<IconSize/>
 		</template>
 	</button-component2>
+		<button-component2 @click="emitCase" :title="'Корпус'" :name="'case'" :menu-items="watchStore.casesMaterials">
+			<template #Icon>
+				<IconCase/>
+			</template>
+		</button-component2>
+		<button-component2 @click="emitBand" :title="'Ремешок'" :name="'band'" :menu-items="watchStore.bandsMaterial" :additional="watchStore.bandsBrand">
+			<template #Icon>
+				<IconBand/>
+			</template>
+		</button-component2>
 	</div>
-	<ButtonComponent @click="emitSize" :class="{ hidden: watchStore.state === State.BAND_CHOICE }">
-		<template #ButtonContent>
-			<span class="menu__btn-wrapper">
-				<IconSize />
-				<Transition name="title">
-					<span v-if="watchStore.state !== State.SIZE_CHOICE">{{ 'Размер' }}</span>
-				</Transition>
-				<TransitionGroup name="list" tag="nav">
-					<!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
-					<span
-						v-if="watchStore.state === State.SIZE_CHOICE"
-						v-for="(item, index) in watchStore.sizes"
-						:key="index"
-						style="padding: 0 0.2em"
-						@click="handleMenuItemClick($event)"
-					>
-						<b id="size-item" v-if="watchStore.currentWatch.caseSize === item"
-							>{{ item.toString() }}мм</b
-						>
-						<span id="size-item" v-else>{{ item.toString() }}мм</span>
-					</span>
-				</TransitionGroup>
-			</span>
-		</template>
-	</ButtonComponent>
 
-	<ButtonComponent :class="{ hidden: watchStore.state === State.BAND_CHOICE }" @click="emitCase">
-		<template #ButtonContent>
-			<span class="menu__btn-wrapper">
-				<IconCase />
-				<Transition name="title">
-					<span v-if="watchStore.state !== State.CASE_CHOICE">{{ 'Корпус' }}</span>
-				</Transition>
-				<TransitionGroup name="list" tag="nav">
-					<span
-						v-if="watchStore.state === State.CASE_CHOICE"
-						v-for="(item, index) in watchStore.casesMaterials"
-						:key="index"
-						style="padding: 0 0.2em"
-						@click="handleMenuItemClick($event)"
-					>
-						<b id="material-item" v-if="watchStore.currentWatch.material === item">{{
-							item
-						}}</b>
-						<span id="material-item" v-else>{{ item }}</span>
-					</span>
-				</TransitionGroup>
-			</span>
-		</template>
-	</ButtonComponent>
-
-	<!-- Материалы -->
-	<swiper
-		v-if="watchStore.state === State.BAND_CHOICE"
-		:navigation="swiperOptions.navigation"
-		:modules="modules"
-		class="bandSwiper"
-		@swiper="onSwiperAdditionalMenu"
-		ref="swiperRefAdditional"
-		:slides-per-view="1"
-		:centeredSlides="true"
-		:breakpoints="{ 1000: { slidesPerView: 3 } }"
-	>
-		<swiper-slide
-			v-if="watchStore.state === State.BAND_CHOICE"
-			v-for="(item, index) in ['Нейлон', 'Кожа', 'Cталь', 'Титан', 'Нейлон']"
-			:key="index"
-			style="padding: 0 0.2em"
-			@click="handleMenuItemClick($event)"
-		>
-			<b id="brand-item" v-if="watchStore.currentWatch.brand === item">{{ item }}</b>
-			<span id="brand-item" v-else>{{ item }}</span>
-		</swiper-slide>
-		<div
-			class="swiper-button-prev bigswiper__btn"
-			@click="swiperRefMenu.slidePrev()"
-			slot="button-prev"
-		></div>
-		<div
-			class="swiper-button-next bigswiper__btn"
-			@click="swiperRefMenu.slideNext()"
-			slot="button-next"
-		></div>
-	</swiper>
-
-	<!-- Бренды/серии ремешков -->
-	<swiper
-		v-if="watchStore.state === State.BAND_CHOICE"
-		:navigation="swiperOptions.navigation"
-		:modules="modules"
-		class="bandSwiper"
-		@swiper="onSwiperMenu"
-		ref="swiperRefMenu"
-		:slides-per-view="1"
-		:centeredSlides="true"
-		:breakpoints="{ 1000: { slidesPerView: 3 } }"
-	>
-		<swiper-slide
-			v-if="watchStore.state === State.BAND_CHOICE"
-			v-for="(item, index) in watchStore.bandsBrand"
-			:key="index"
-			style="padding: 0 0.2em"
-			@click="handleMenuItemClick($event)"
-		>
-			<b v-if="watchStore.currentWatch.brand === item">{{ item }}</b>
-			<span v-else>{{ item }}</span>
-		</swiper-slide>
-		<div
-			class="swiper-button-prev bigswiper__btn"
-			@click="swiperRefMenu.slidePrev()"
-			slot="button-prev"
-		></div>
-		<div
-			class="swiper-button-next bigswiper__btn"
-			@click="swiperRefMenu.slideNext()"
-			slot="button-next"
-		></div>
-	</swiper>
-	<ButtonComponent @click="emitBand" v-if="watchStore.state !== State.BAND_CHOICE">
-		<template #ButtonContent>
-			<span class="menu__btn-wrapper">
-				<IconBand />
-				<Transition name="title">
-					<span>{{ 'Ремешок' }}</span>
-				</Transition>
-			</span>
-		</template>
-	</ButtonComponent>
 </template>
 
 <script setup lang="ts">
@@ -154,6 +37,7 @@ import 'swiper/css/pagination'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { ref } from 'vue'
+import {useRouter} from "vue-router";
 const modules = [Navigation, Pagination, Scrollbar, EffectFade]
 
 const bandSwiper = () => {}
@@ -167,16 +51,21 @@ const emit = defineEmits<{
 	(e: 'series'): void
 	(e: 'subItem', $event: Event): void
 }>()
+const router = useRouter();
 const emitSize = () => {
+	router.push('/size')
 	emit('size')
 }
 const emitCase = () => {
+	router.push('/case')
 	emit('case')
 }
 const emitBand = () => {
+	router.push('/bands')
 	emit('band')
 }
 const emitSeries = () => {
+	router.push('/series')
 	emit('series')
 }
 const handleMenuItemClick = async (event: Event) => {
@@ -184,7 +73,7 @@ const handleMenuItemClick = async (event: Event) => {
 }
 //const handleCaseItemClick = async(case: string) =>{};
 const props = defineProps<{
-	variations: object
+	variations?: object
 }>()
 const swiperOptions = {
 	navigation: {

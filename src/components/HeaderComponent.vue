@@ -22,17 +22,17 @@
           </TransitionGroup>
         </div>
       </div-->
-			<button-component @click="emitSave" style="background: #007aff; color: white">
-				<template #ButtonContent>
-					{{ 'Подробнее' }}
-				</template>
-			</button-component>
+<!--			<button-component @click="emitSave" style="background: #007aff; color: white">-->
+<!--				<template #ButtonContent>-->
+<!--					{{ 'Подробнее' }}-->
+<!--				</template>-->
+<!--			</button-component>-->
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import ButtonComponent from '@/components/ui/ButtonComponent.vue'
+import ButtonComponent from '@/components/ui/ButtonComponent2.vue'
 import { ref } from 'vue'
 const emit = defineEmits<{
 	(e: 'save'): void

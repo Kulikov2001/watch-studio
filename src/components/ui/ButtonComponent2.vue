@@ -87,6 +87,7 @@ import { computed, ref } from 'vue'
 import { State, useWatchStore } from '@/stores/watch'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import {useRouter} from "vue-router";
 
 // Import Swiper styles
 //import 'swiper/css';
@@ -130,24 +131,25 @@ const name = ref<string>(props.name)
 const title = ref<string>(props.title)
 const swiperRefMenu: any = ref(null)
 const swiperRefAdditional: any = ref(null)
-
-const elState = computed(() => {
-	switch (props.name) {
-		case 'series':
-			return State.SERIES_CHOICE
-		case 'size':
-			return State.SIZE_CHOICE
-		case 'case':
-			return State.CASE_CHOICE
-		case 'band':
-			return State.BAND_CHOICE
-		default:
-			console.error(
-				'Invalid parse props.name in component ' + props.name + 'elState returned 0'
-			)
-			return 0
-	}
-})
+const router = useRouter();
+const elState = computed(()=> router.currentRoute.value.meta.name);
+// const elState = computed(() => {
+// 	switch (props.name) {
+// 		case 'series':
+// 			return State.SERIES_CHOICE
+// 		case 'size':
+// 			return State.SIZE_CHOICE
+// 		case 'case':
+// 			return State.CASE_CHOICE
+// 		case 'band':
+// 			return State.BAND_CHOICE
+// 		default:
+// 			console.error(
+// 				'Invalid parse props.name in component ' + props.name + 'elState returned 0'
+// 			)
+// 			return 0
+// 	}
+// })
 </script>
 
 <style scoped>
@@ -168,7 +170,9 @@ button {
 	cursor: pointer;
 	font-family: Arial, Montserat, Verdana, sans-serif;
 }
-
+.swipersBtn{
+	max-width: 75%;
+}
 .list-enter-active {
 	/*,
 .list-leave-active { */
