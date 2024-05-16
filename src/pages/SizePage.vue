@@ -1,11 +1,9 @@
 <template>
-  <slot></slot>
+	<slot></slot>
 </template>
 
-<script>
-export default {
-  name: 'SizePage.vue'
-}
+<script setup>
+
 </script>
 
 <style scoped></style>

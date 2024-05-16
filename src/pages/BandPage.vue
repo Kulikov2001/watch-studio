@@ -1,10 +1,10 @@
 <template>
-  <slot></slot>
+	<slot></slot>
 </template>
 
 <script>
 export default {
-  name: 'BandPage.vue'
+	name: 'BandPage.vue'
 }
 </script>
 
