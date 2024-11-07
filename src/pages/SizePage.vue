@@ -2,7 +2,7 @@
 import CarouselComponent from "@/components/CarouselComponent.vue";
 import {onBeforeRouteUpdate, useRouter} from "vue-router";
 import {onMounted} from "vue";
-import {useWatchStore} from "@/stores/watch";
+import {useWatchStore} from "@/stores/useWatchStore";
 // onBeforeRouteUpdate(async (to, from) => {
 // 	// react to route changes...
 // 	//userData.value = await fetchUser(to.params.id)

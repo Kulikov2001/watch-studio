@@ -1,20 +1,20 @@
 export const newCase = [
 	{
-		pic: './public/size-series/S1/38/38_S1_18-Carat rose gold.webp',
+		pic: '/public/size-series/S1/38/38_S1_18-Carat rose gold.webp',
 		sku: '38_S1_18-Carat rose gold',
 		size: '38',
 		series: 'Серия 1',
 		color: 'rose gold'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_18-Carat yellow gold.webp',
+		pic: '/public/size-series/S1/38/38_S1_18-Carat yellow gold.webp',
 		sku: '38_S1_18-Carat yellow gold',
 		size: '38',
 		series: 'Серия 1',
 		color: 'yellow gold'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_Gold_al.webp',
+		pic: '/public/size-series/S1/38/38_S1_Gold_al.webp',
 		sku: '38_S1_Gold_al',
 		size: '38',
 		series: 'Серия 1',
@@ -22,7 +22,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_Rose Gold_al.webp',
+		pic: '/public/size-series/S1/38/38_S1_Rose Gold_al.webp',
 		sku: '38_S1_Rose Gold_al',
 		size: '38',
 		series: 'Серия 1',
@@ -30,7 +30,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_Silver_al.webp',
+		pic: '/public/size-series/S1/38/38_S1_Silver_al.webp',
 		sku: '38_S1_Silver_al',
 		size: '38',
 		series: 'Серия 1',
@@ -38,7 +38,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_Space Black Stainless Steel.webp',
+		pic: '/public/size-series/S1/38/38_S1_Space Black Stainless Steel.webp',
 		sku: '38_S1_Space Black Stainless Steel',
 		size: '38',
 		series: 'Серия 1',
@@ -46,7 +46,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_Space Grey_al.webp',
+		pic: '/public/size-series/S1/38/38_S1_Space Grey_al.webp',
 		sku: '38_S1_Space Grey_al',
 		size: '38',
 		series: 'Серия 1',
@@ -54,14 +54,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/38/38_S1_Stainless steel.webp',
+		pic: '/public/size-series/S1/38/38_S1_Stainless steel.webp',
 		sku: '38_S1_Stainless steel',
 		size: '38',
 		series: 'Серия 1',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_Gold_al.webp',
+		pic: '/public/size-series/S2/38/38_S2_Gold_al.webp',
 		sku: '38_S2_Gold_al',
 		size: '38',
 		series: 'Серия 2',
@@ -69,7 +69,7 @@ export const newCase = [
 		color: 'gold'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_Rose gold_al.webp',
+		pic: '/public/size-series/S2/38/38_S2_Rose gold_al.webp',
 		sku: '38_S2_Rose gold_al',
 		size: '38',
 		series: 'Серия 2',
@@ -77,7 +77,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_Silver_al.webp',
+		pic: '/public/size-series/S2/38/38_S2_Silver_al.webp',
 		sku: '38_S2_Silver_al',
 		size: '38',
 		series: 'Серия 2',
@@ -85,7 +85,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_Space Black Stainless Steel.webp',
+		pic: '/public/size-series/S2/38/38_S2_Space Black Stainless Steel.webp',
 		sku: '38_S2_Space Black Stainless Steel',
 		size: '38',
 		series: 'Серия 2',
@@ -93,7 +93,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_Space Grey_al.webp',
+		pic: '/public/size-series/S2/38/38_S2_Space Grey_al.webp',
 		sku: '38_S2_Space Grey_al',
 		size: '38',
 		series: 'Серия 2',
@@ -101,14 +101,14 @@ export const newCase = [
 		color: 'space grey'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_Stainless Steel.webp',
+		pic: '/public/size-series/S2/38/38_S2_Stainless Steel.webp',
 		sku: '38_S2_Stainless Steel',
 		size: '38',
 		series: 'Серия 2',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S2/38/38_S2_White Ceramic.webp',
+		pic: '/public/size-series/S2/38/38_S2_White Ceramic.webp',
 		sku: '38_S2_White Ceramic',
 		size: '38',
 		series: 'Серия 2',
@@ -116,7 +116,7 @@ export const newCase = [
 		color: 'white ceramic'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_Gold_al.webp',
+		pic: '/public/size-series/S3/38/38_S3_Gold_al.webp',
 		sku: '38_S3_Gold_al',
 		size: '38',
 		series: 'Серия 3',
@@ -124,7 +124,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_Grey Ceramic.webp',
+		pic: '/public/size-series/S3/38/38_S3_Grey Ceramic.webp',
 		sku: '38_S3_Grey Ceramic',
 		size: '38',
 		series: 'Серия 3',
@@ -132,7 +132,7 @@ export const newCase = [
 		material: 'ceramic'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_Silver_al.webp',
+		pic: '/public/size-series/S3/38/38_S3_Silver_al.webp',
 		sku: '38_S3_Silver_al',
 		size: '38',
 		series: 'Серия 3',
@@ -140,7 +140,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_Space Black Stainless Steel.webp',
+		pic: '/public/size-series/S3/38/38_S3_Space Black Stainless Steel.webp',
 		sku: '38_S3_Space Black Stainless Steel',
 		size: '38',
 		series: 'Серия 3',
@@ -148,7 +148,7 @@ export const newCase = [
 		color: 'space black'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_Space Grey_al.webp',
+		pic: '/public/size-series/S3/38/38_S3_Space Grey_al.webp',
 		sku: '38_S3_Space Grey_al',
 		size: '38',
 		series: 'Серия 3',
@@ -156,14 +156,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_Stainless Steel.webp',
+		pic: '/public/size-series/S3/38/38_S3_Stainless Steel.webp',
 		sku: '38_S3_Stainless Steel',
 		size: '38',
 		series: 'Серия 3',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S3/38/38_S3_White Ceramic.webp',
+		pic: '/public/size-series/S3/38/38_S3_White Ceramic.webp',
 		sku: '38_S3_White Ceramic',
 		size: '38',
 		series: 'Серия 3',
@@ -171,7 +171,7 @@ export const newCase = [
 		material: 'ceramic'
 	},
 	{
-		pic: './public/size-series/S4/40/40_S4_Gold stainless steel.webp',
+		pic: '/public/size-series/S4/40/40_S4_Gold stainless steel.webp',
 		sku: '40_S4_Gold stainless steel',
 		size: '40',
 		series: 'Серия 4',
@@ -179,7 +179,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S4/40/40_S4_Gold_al.webp',
+		pic: '/public/size-series/S4/40/40_S4_Gold_al.webp',
 		sku: '40_S4_Gold_al',
 		size: '40',
 		series: 'Серия 4',
@@ -187,7 +187,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S4/40/40_S4_Silver_al.webp',
+		pic: '/public/size-series/S4/40/40_S4_Silver_al.webp',
 		sku: '40_S4_Silver_al',
 		size: '40',
 		series: 'Серия 4',
@@ -195,7 +195,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S4/40/40_S4_Space Black stainless steel.webp',
+		pic: '/public/size-series/S4/40/40_S4_Space Black stainless steel.webp',
 		sku: '40_S4_Space Black stainless steel',
 		size: '40',
 		series: 'Серия 4',
@@ -203,7 +203,7 @@ export const newCase = [
 		color: 'space black'
 	},
 	{
-		pic: './public/size-series/S4/40/40_S4_Space Grey_al.webp',
+		pic: '/public/size-series/S4/40/40_S4_Space Grey_al.webp',
 		sku: '40_S4_Space Grey_al',
 		size: '40',
 		series: 'Серия 4',
@@ -211,14 +211,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S4/40/40_S4_Stainless steel.webp',
+		pic: '/public/size-series/S4/40/40_S4_Stainless steel.webp',
 		sku: '40_S4_Stainless steel',
 		size: '40',
 		series: 'Серия 4',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Dark titanium.webp',
+		pic: '/public/size-series/S5/40/40_S5_Dark titanium.webp',
 		sku: '40_S5_Dark titanium',
 		size: '40',
 		series: 'Серия 5',
@@ -226,7 +226,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Gold Stainless steel.webp',
+		pic: '/public/size-series/S5/40/40_S5_Gold Stainless steel.webp',
 		sku: '40_S5_Gold Stainless steel',
 		size: '40',
 		series: 'Серия 5',
@@ -234,7 +234,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Gold_al.webp',
+		pic: '/public/size-series/S5/40/40_S5_Gold_al.webp',
 		sku: '40_S5_Gold_al',
 		size: '40',
 		series: 'Серия 5',
@@ -242,7 +242,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Light titanium.webp',
+		pic: '/public/size-series/S5/40/40_S5_Light titanium.webp',
 		sku: '40_S5_Light titanium',
 		size: '40',
 		series: 'Серия 5',
@@ -250,7 +250,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Silver_al.webp',
+		pic: '/public/size-series/S5/40/40_S5_Silver_al.webp',
 		sku: '40_S5_Silver_al',
 		size: '40',
 		series: 'Серия 5',
@@ -258,7 +258,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Space Black stainless steel.webp',
+		pic: '/public/size-series/S5/40/40_S5_Space Black stainless steel.webp',
 		sku: '40_S5_Space Black stainless steel',
 		size: '40',
 		series: 'Серия 5',
@@ -266,7 +266,7 @@ export const newCase = [
 		color: 'space black'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Space Grey_al.webp',
+		pic: '/public/size-series/S5/40/40_S5_Space Grey_al.webp',
 		sku: '40_S5_Space Grey_al',
 		size: '40',
 		series: 'Серия 5',
@@ -274,14 +274,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_Stainless steel.webp',
+		pic: '/public/size-series/S5/40/40_S5_Stainless steel.webp',
 		sku: '40_S5_Stainless steel',
 		size: '40',
 		series: 'Серия 5',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S5/40/40_S5_White ceramic.webp',
+		pic: '/public/size-series/S5/40/40_S5_White ceramic.webp',
 		sku: '40_S5_White ceramic',
 		size: '40',
 		series: 'Серия 5',
@@ -289,7 +289,7 @@ export const newCase = [
 		material: 'ceramic'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Blue_al.webp',
+		pic: '/public/size-series/S6/40/40_S6_Blue_al.webp',
 		sku: '40_S6_Blue_al',
 		size: '40',
 		series: 'Серия 6',
@@ -297,7 +297,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Gold Stainless Steel.webp',
+		pic: '/public/size-series/S6/40/40_S6_Gold Stainless Steel.webp',
 		sku: '40_S6_Gold Stainless Steel',
 		size: '40',
 		series: 'Серия 6',
@@ -305,7 +305,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Gold_al.webp',
+		pic: '/public/size-series/S6/40/40_S6_Gold_al.webp',
 		sku: '40_S6_Gold_al',
 		size: '40',
 		series: 'Серия 6',
@@ -313,7 +313,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Graphite Stainless Steel.webp',
+		pic: '/public/size-series/S6/40/40_S6_Graphite Stainless Steel.webp',
 		sku: '40_S6_Graphite Stainless Steel',
 		size: '40',
 		series: 'Серия 6',
@@ -321,7 +321,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Red_al.webp',
+		pic: '/public/size-series/S6/40/40_S6_Red_al.webp',
 		sku: '40_S6_Red_al',
 		size: '40',
 		series: 'Серия 6',
@@ -329,7 +329,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Silver Stainless Steel.webp',
+		pic: '/public/size-series/S6/40/40_S6_Silver Stainless Steel.webp',
 		sku: '40_S6_Silver Stainless Steel',
 		size: '40',
 		series: 'Серия 6',
@@ -337,7 +337,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Silver_al.webp',
+		pic: '/public/size-series/S6/40/40_S6_Silver_al.webp',
 		sku: '40_S6_Silver_al',
 		size: '40',
 		series: 'Серия 6',
@@ -345,7 +345,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Space Black stainless steel.webp',
+		pic: '/public/size-series/S6/40/40_S6_Space Black stainless steel.webp',
 		sku: '40_S6_Space Black stainless steel',
 		size: '40',
 		series: 'Серия 6',
@@ -353,7 +353,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Space Black Titanium.webp',
+		pic: '/public/size-series/S6/40/40_S6_Space Black Titanium.webp',
 		sku: '40_S6_Space Black Titanium',
 		size: '40',
 		series: 'Серия 6',
@@ -361,7 +361,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Space Grey_al.webp',
+		pic: '/public/size-series/S6/40/40_S6_Space Grey_al.webp',
 		sku: '40_S6_Space Grey_al',
 		size: '40',
 		series: 'Серия 6',
@@ -369,14 +369,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/40/40_S6_Titanium.webp',
+		pic: '/public/size-series/S6/40/40_S6_Titanium.webp',
 		sku: '40_S6_Titanium',
 		size: '40',
 		series: 'Серия 6',
 		color: 'titanium'
 	},
 	{
-		pic: './public/size-series/Серия SE (1nd generation)/40/40_SE1_Gold_al.webp',
+		pic: '/public/size-series/Серия SE (1nd generation)/40/40_SE1_Gold_al.webp',
 		sku: '40_SE1_Gold_al',
 		size: '40',
 		series: 'Серия SE (1-ое поколение)',
@@ -384,7 +384,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (1nd generation)/40/40_SE1_Silver_al.webp',
+		pic: '/public/size-series/Серия SE (1nd generation)/40/40_SE1_Silver_al.webp',
 		sku: '40_SE1_Silver_al',
 		size: '40',
 		series: 'Серия SE (1-ое поколение)',
@@ -392,7 +392,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (1nd generation)/40/40_SE1_Space Grey_al.webp',
+		pic: '/public/size-series/Серия SE (1nd generation)/40/40_SE1_Space Grey_al.webp',
 		sku: '40_SE1_Space Grey_al',
 		size: '40',
 		series: 'Серия SE (1-ое поколение)',
@@ -400,7 +400,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (2nd generation)/40/40_SE2_Midnight_al.webp',
+		pic: '/public/size-series/Серия SE (2nd generation)/40/40_SE2_Midnight_al.webp',
 		sku: '40_SE2_Midnight_al',
 		size: '40',
 		series: 'Серия SE (2-ое поколение)',
@@ -408,7 +408,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (2nd generation)/40/40_SE2_Silver_al.webp',
+		pic: '/public/size-series/Серия SE (2nd generation)/40/40_SE2_Silver_al.webp',
 		sku: '40_SE2_Silver_al',
 		size: '40',
 		series: 'Серия SE (2-ое поколение)',
@@ -416,7 +416,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (2nd generation)/40/40_SE2_Starlight_al.webp',
+		pic: '/public/size-series/Серия SE (2nd generation)/40/40_SE2_Starlight_al.webp',
 		sku: '40_SE2_Starlight_al',
 		size: '40',
 		series: 'Серия SE (2-ое поколение)',
@@ -424,14 +424,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Blue.webp',
+		pic: '/public/size-series/S7/41/41_S7_Blue.webp',
 		sku: '41_S7_Blue',
 		size: '41',
 		series: 'Серия 7',
 		color: 'blue'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Gold stainless steel.webp',
+		pic: '/public/size-series/S7/41/41_S7_Gold stainless steel.webp',
 		sku: '41_S7_Gold stainless steel',
 		size: '41',
 		series: 'Серия 7',
@@ -439,7 +439,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Graphite stainless steel.webp',
+		pic: '/public/size-series/S7/41/41_S7_Graphite stainless steel.webp',
 		sku: '41_S7_Graphite stainless steel',
 		size: '41',
 		series: 'Серия 7',
@@ -447,21 +447,21 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Green.webp',
+		pic: '/public/size-series/S7/41/41_S7_Green.webp',
 		sku: '41_S7_Green',
 		size: '41',
 		series: 'Серия 7',
 		color: 'green'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Midnight.webp',
+		pic: '/public/size-series/S7/41/41_S7_Midnight.webp',
 		sku: '41_S7_Midnight',
 		size: '41',
 		series: 'Серия 7',
 		color: 'midnight'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Natural titanium.webp',
+		pic: '/public/size-series/S7/41/41_S7_Natural titanium.webp',
 		sku: '41_S7_Natural titanium',
 		size: '41',
 		series: 'Серия 7',
@@ -469,14 +469,14 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Red.webp',
+		pic: '/public/size-series/S7/41/41_S7_Red.webp',
 		sku: '41_S7_Red',
 		size: '41',
 		series: 'Серия 7',
 		color: 'red'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Silver stainless steel.webp',
+		pic: '/public/size-series/S7/41/41_S7_Silver stainless steel.webp',
 		sku: '41_S7_Silver stainless steel',
 		size: '41',
 		series: 'Серия 7',
@@ -484,7 +484,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Space Black stainless steel.webp',
+		pic: '/public/size-series/S7/41/41_S7_Space Black stainless steel.webp',
 		sku: '41_S7_Space Black stainless steel',
 		size: '41',
 		series: 'Серия 7',
@@ -492,7 +492,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Space Black titanium.webp',
+		pic: '/public/size-series/S7/41/41_S7_Space Black titanium.webp',
 		sku: '41_S7_Space Black titanium',
 		size: '41',
 		series: 'Серия 7',
@@ -500,14 +500,14 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S7/41/41_S7_Starlight.webp',
+		pic: '/public/size-series/S7/41/41_S7_Starlight.webp',
 		sku: '41_S7_Starlight',
 		size: '41',
 		series: 'Серия 7',
 		color: 'starlight'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Gold stainless steel.webp',
+		pic: '/public/size-series/S8/41/41_S8_Gold stainless steel.webp',
 		sku: '41_S8_Gold stainless steel',
 		size: '41',
 		series: 'Серия 8',
@@ -515,7 +515,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Graphite stainless steel.webp',
+		pic: '/public/size-series/S8/41/41_S8_Graphite stainless steel.webp',
 		sku: '41_S8_Graphite stainless steel',
 		size: '41',
 		series: 'Серия 8',
@@ -523,14 +523,14 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Midnight_al.webp',
+		pic: '/public/size-series/S8/41/41_S8_Midnight_al.webp',
 		sku: '41_S8_Midnight_al',
 		size: '41',
 		series: 'Серия 8',
 		color: 'midnight'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Red_al.webp',
+		pic: '/public/size-series/S8/41/41_S8_Red_al.webp',
 		sku: '41_S8_Red_al',
 		size: '41',
 		series: 'Серия 8',
@@ -538,7 +538,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Silver stainless steel.webp',
+		pic: '/public/size-series/S8/41/41_S8_Silver stainless steel.webp',
 		sku: '41_S8_Silver stainless steel',
 		size: '41',
 		series: 'Серия 8',
@@ -546,7 +546,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Silver_al.webp',
+		pic: '/public/size-series/S8/41/41_S8_Silver_al.webp',
 		sku: '41_S8_Silver_al',
 		size: '41',
 		series: 'Серия 8',
@@ -554,7 +554,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Space Black stainless steel.webp',
+		pic: '/public/size-series/S8/41/41_S8_Space Black stainless steel.webp',
 		sku: '41_S8_Space Black stainless steel',
 		size: '41',
 		series: 'Серия 8',
@@ -562,7 +562,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/41/41_S8_Starlight_al.webp',
+		pic: '/public/size-series/S8/41/41_S8_Starlight_al.webp',
 		sku: '41_S8_Starlight_al',
 		size: '41',
 		series: 'Серия 8',
@@ -570,7 +570,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Gold stainless steel.webp',
+		pic: '/public/size-series/S9/41/41_S9_Gold stainless steel.webp',
 		sku: '41_S9_Gold stainless steel',
 		size: '41',
 		series: 'Серия 9',
@@ -578,7 +578,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Graphite stainless steel.webp',
+		pic: '/public/size-series/S9/41/41_S9_Graphite stainless steel.webp',
 		sku: '41_S9_Graphite stainless steel',
 		size: '41',
 		series: 'Серия 9',
@@ -586,7 +586,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Midnight_al.webp',
+		pic: '/public/size-series/S9/41/41_S9_Midnight_al.webp',
 		sku: '41_S9_Midnight_al',
 		size: '41',
 		series: 'Серия 9',
@@ -594,7 +594,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Pink_al.webp',
+		pic: '/public/size-series/S9/41/41_S9_Pink_al.webp',
 		sku: '41_S9_Pink_al',
 		size: '41',
 		series: 'Серия 9',
@@ -602,7 +602,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Red_al.webp',
+		pic: '/public/size-series/S9/41/41_S9_Red_al.webp',
 		sku: '41_S9_Red_al',
 		size: '41',
 		series: 'Серия 9',
@@ -610,7 +610,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Silver stainless steel.webp',
+		pic: '/public/size-series/S9/41/41_S9_Silver stainless steel.webp',
 		sku: '41_S9_Silver stainless steel',
 		size: '41',
 		series: 'Серия 9',
@@ -618,7 +618,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Silver_al.webp',
+		pic: '/public/size-series/S9/41/41_S9_Silver_al.webp',
 		sku: '41_S9_Silver_al',
 		size: '41',
 		series: 'Серия 9',
@@ -626,7 +626,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Space Black stainless steel.webp',
+		pic: '/public/size-series/S9/41/41_S9_Space Black stainless steel.webp',
 		sku: '41_S9_Space Black stainless steel',
 		size: '41',
 		series: 'Серия 9',
@@ -634,7 +634,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/41/41_S9_Starlight_al.webp',
+		pic: '/public/size-series/S9/41/41_S9_Starlight_al.webp',
 		sku: '41_S9_Starlight_al',
 		size: '41',
 		series: 'Серия 9',
@@ -642,21 +642,21 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_18-Carat rose gold.webp',
+		pic: '/public/size-series/S1/42/42_S1_18-Carat rose gold.webp',
 		sku: '42_S1_18-Carat rose gold',
 		size: '42',
 		series: 'Серия 1',
 		color: 'rose gold'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_18-Carat yellow gold.webp',
+		pic: '/public/size-series/S1/42/42_S1_18-Carat yellow gold.webp',
 		sku: '42_S1_18-Carat yellow gold',
 		size: '42',
 		series: 'Серия 1',
 		color: 'yellow gold'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_Gold_al.webp',
+		pic: '/public/size-series/S1/42/42_S1_Gold_al.webp',
 		sku: '42_S1_Gold_al',
 		size: '42',
 		series: 'Серия 1',
@@ -664,7 +664,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_Rose Gold_al.webp',
+		pic: '/public/size-series/S1/42/42_S1_Rose Gold_al.webp',
 		sku: '42_S1_Rose Gold_al',
 		size: '42',
 		series: 'Серия 1',
@@ -672,7 +672,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_Silver_al.webp',
+		pic: '/public/size-series/S1/42/42_S1_Silver_al.webp',
 		sku: '42_S1_Silver_al',
 		size: '42',
 		series: 'Серия 1',
@@ -680,7 +680,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_Space Black Stainless Steel.webp',
+		pic: '/public/size-series/S1/42/42_S1_Space Black Stainless Steel.webp',
 		sku: '42_S1_Space Black Stainless Steel',
 		size: '42',
 		series: 'Серия 1',
@@ -688,7 +688,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_Space Grey_al.webp',
+		pic: '/public/size-series/S1/42/42_S1_Space Grey_al.webp',
 		sku: '42_S1_Space Grey_al',
 		size: '42',
 		series: 'Серия 1',
@@ -696,7 +696,7 @@ export const newCase = [
 		color: 'space grey'
 	},
 	{
-		pic: './public/size-series/S1/42/42_S1_Stainless steel.webp',
+		pic: '/public/size-series/S1/42/42_S1_Stainless steel.webp',
 		sku: '42_S1_Stainless steel',
 		size: '42',
 		series: 'Серия 1',
@@ -704,7 +704,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S2/42/42_S2_Gold_al.webp',
+		pic: '/public/size-series/S2/42/42_S2_Gold_al.webp',
 		sku: '42_S2_Gold_al',
 		size: '42',
 		series: 'Серия 2',
@@ -712,7 +712,7 @@ export const newCase = [
 		color: 'gold'
 	},
 	{
-		pic: './public/size-series/S2/42/42_S2_Rose Gold_al.webp',
+		pic: '/public/size-series/S2/42/42_S2_Rose Gold_al.webp',
 		sku: '42_S2_Rose Gold_al',
 		size: '42',
 		series: 'Серия 2',
@@ -720,7 +720,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S2/42/42_S2_Silver_al.webp',
+		pic: '/public/size-series/S2/42/42_S2_Silver_al.webp',
 		sku: '42_S2_Silver_al',
 		size: '42',
 		series: 'Серия 2',
@@ -728,7 +728,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S2/42/42_S2_Space Black Stainless Steel.webp',
+		pic: '/public/size-series/S2/42/42_S2_Space Black Stainless Steel.webp',
 		sku: '42_S2_Space Black Stainless Steel',
 		size: '42',
 		series: 'Серия 2',
@@ -736,7 +736,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S2/42/42_S2_Space Grey_al.webp',
+		pic: '/public/size-series/S2/42/42_S2_Space Grey_al.webp',
 		sku: '42_S2_Space Grey_al',
 		size: '42',
 		series: 'Серия 2',
@@ -744,14 +744,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S2/42/42_S2_Stainless steel.webp',
+		pic: '/public/size-series/S2/42/42_S2_Stainless steel.webp',
 		sku: '42_S2_Stainless steel',
 		size: '42',
 		series: 'Серия 2',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S2/42/42_S2_White Ceramic.webp',
+		pic: '/public/size-series/S2/42/42_S2_White Ceramic.webp',
 		sku: '42_S2_White Ceramic',
 		size: '42',
 		series: 'Серия 2',
@@ -760,7 +760,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S3/42/42_S3_Gold_al.webp',
+		pic: '/public/size-series/S3/42/42_S3_Gold_al.webp',
 		sku: '42_S3_Gold_al',
 		size: '42',
 		series: 'Серия 3',
@@ -768,7 +768,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S3/42/42_S3_Grey Ceramic.webp',
+		pic: '/public/size-series/S3/42/42_S3_Grey Ceramic.webp',
 		sku: '42_S3_Grey Ceramic',
 		size: '42',
 		series: 'Серия 3',
@@ -776,7 +776,7 @@ export const newCase = [
 		material: 'ceramic'
 	},
 	{
-		pic: './public/size-series/S3/42/42_S3_Silver_al.webp',
+		pic: '/public/size-series/S3/42/42_S3_Silver_al.webp',
 		sku: '42_S3_Silver_al',
 		size: '42',
 		series: 'Серия 3',
@@ -784,7 +784,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S3/42/42_S3_Space Black Stainless Steel.webp',
+		pic: '/public/size-series/S3/42/42_S3_Space Black Stainless Steel.webp',
 		sku: '42_S3_Space Black Stainless Steel',
 		size: '42',
 		series: 'Серия 3',
@@ -792,7 +792,7 @@ export const newCase = [
 		color: 'space black'
 	},
 	{
-		pic: './public/size-series/S3/42/42_S3_Space Grey_al.webp',
+		pic: '/public/size-series/S3/42/42_S3_Space Grey_al.webp',
 		sku: '42_S3_Space Grey_al',
 		size: '42',
 		series: 'Серия 3',
@@ -800,14 +800,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S3/42/42_S3_Stainless Steel.webp',
+		pic: '/public/size-series/S3/42/42_S3_Stainless Steel.webp',
 		sku: '42_S3_Stainless Steel',
 		size: '42',
 		series: 'Серия 3',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S3/42/42_S3_White Ceramic.webp',
+		pic: '/public/size-series/S3/42/42_S3_White Ceramic.webp',
 		sku: '42_S3_White Ceramic',
 		size: '42',
 		series: 'Серия 3',
@@ -816,7 +816,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S4/44/44_S4_Gold stainless steel.webp',
+		pic: '/public/size-series/S4/44/44_S4_Gold stainless steel.webp',
 		sku: '44_S4_Gold stainless steel',
 		size: '44',
 		series: 'Серия 4',
@@ -824,7 +824,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S4/44/44_S4_Gold_al.webp',
+		pic: '/public/size-series/S4/44/44_S4_Gold_al.webp',
 		sku: '44_S4_Gold_al',
 		size: '44',
 		series: 'Серия 4',
@@ -832,7 +832,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S4/44/44_S4_Silver_al.webp',
+		pic: '/public/size-series/S4/44/44_S4_Silver_al.webp',
 		sku: '44_S4_Silver_al',
 		size: '44',
 		series: 'Серия 4',
@@ -840,7 +840,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S4/44/44_S4_Space Black stainless steel.webp',
+		pic: '/public/size-series/S4/44/44_S4_Space Black stainless steel.webp',
 		sku: '44_S4_Space Black stainless steel',
 		size: '44',
 		series: 'Серия 4',
@@ -848,7 +848,7 @@ export const newCase = [
 		color: 'space black'
 	},
 	{
-		pic: './public/size-series/S4/44/44_S4_Space Grey_al.webp',
+		pic: '/public/size-series/S4/44/44_S4_Space Grey_al.webp',
 		sku: '44_S4_Space Grey_al',
 		size: '44',
 		series: 'Серия 4',
@@ -856,7 +856,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S4/44/44_S4_Stainless steel.webp',
+		pic: '/public/size-series/S4/44/44_S4_Stainless steel.webp',
 		sku: '44_S4_Stainless steel',
 		size: '44',
 		series: 'Серия 4',
@@ -864,7 +864,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S5/44/44_S5_Dark titanium.webp',
+		pic: '/public/size-series/S5/44/44_S5_Dark titanium.webp',
 		sku: '44_S5_Dark titanium',
 		size: '44',
 		series: 'Серия 5',
@@ -872,7 +872,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Gold stainless steel.webp',
+		pic: '/public/size-series/S5/44/44_S5_Gold stainless steel.webp',
 		sku: '44_S5_Gold stainless steel',
 		size: '44',
 		series: 'Серия 5',
@@ -880,7 +880,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Gold_al.webp',
+		pic: '/public/size-series/S5/44/44_S5_Gold_al.webp',
 		sku: '44_S5_Gold_al',
 		size: '44',
 		series: 'Серия 5',
@@ -888,7 +888,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Light titanium.webp',
+		pic: '/public/size-series/S5/44/44_S5_Light titanium.webp',
 		sku: '44_S5_Light titanium',
 		size: '44',
 		series: 'Серия 5',
@@ -896,7 +896,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Silver_al.webp',
+		pic: '/public/size-series/S5/44/44_S5_Silver_al.webp',
 		sku: '44_S5_Silver_al',
 		size: '44',
 		series: 'Серия 5',
@@ -904,7 +904,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Space Black stainless steel.webp',
+		pic: '/public/size-series/S5/44/44_S5_Space Black stainless steel.webp',
 		sku: '44_S5_Space Black stainless steel',
 		size: '44',
 		series: 'Серия 5',
@@ -912,7 +912,7 @@ export const newCase = [
 		color: 'space black'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Space Grey_al.webp',
+		pic: '/public/size-series/S5/44/44_S5_Space Grey_al.webp',
 		sku: '44_S5_Space Grey_al',
 		size: '44',
 		series: 'Серия 5',
@@ -920,14 +920,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_Stainless steel.webp',
+		pic: '/public/size-series/S5/44/44_S5_Stainless steel.webp',
 		sku: '44_S5_Stainless steel',
 		size: '44',
 		series: 'Серия 5',
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S5/44/44_S5_White ceramic.webp',
+		pic: '/public/size-series/S5/44/44_S5_White ceramic.webp',
 		sku: '44_S5_White ceramic',
 		size: '44',
 		series: 'Серия 5',
@@ -936,7 +936,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S6/44/44_S6_Blue_al.webp',
+		pic: '/public/size-series/S6/44/44_S6_Blue_al.webp',
 		sku: '44_S6_Blue_al',
 		size: '44',
 		series: 'Серия 6',
@@ -944,7 +944,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Gold Stainless Steel.webp',
+		pic: '/public/size-series/S6/44/44_S6_Gold Stainless Steel.webp',
 		sku: '44_S6_Gold Stainless Steel',
 		size: '44',
 		series: 'Серия 6',
@@ -952,7 +952,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Gold_al.webp',
+		pic: '/public/size-series/S6/44/44_S6_Gold_al.webp',
 		sku: '44_S6_Gold_al',
 		size: '44',
 		series: 'Серия 6',
@@ -960,7 +960,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Graphite Stainless Steel.webp',
+		pic: '/public/size-series/S6/44/44_S6_Graphite Stainless Steel.webp',
 		sku: '44_S6_Graphite Stainless Steel',
 		size: '44',
 		series: 'Серия 6',
@@ -968,7 +968,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Red_al.webp',
+		pic: '/public/size-series/S6/44/44_S6_Red_al.webp',
 		sku: '44_S6_Red_al',
 		size: '44',
 		series: 'Серия 6',
@@ -976,7 +976,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Silver Stainless Steel.webp',
+		pic: '/public/size-series/S6/44/44_S6_Silver Stainless Steel.webp',
 		sku: '44_S6_Silver Stainless Steel',
 		size: '44',
 		series: 'Серия 6',
@@ -984,7 +984,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Silver_al.webp',
+		pic: '/public/size-series/S6/44/44_S6_Silver_al.webp',
 		sku: '44_S6_Silver_al',
 		size: '44',
 		series: 'Серия 6',
@@ -992,7 +992,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Space Black stainless steel.webp',
+		pic: '/public/size-series/S6/44/44_S6_Space Black stainless steel.webp',
 		sku: '44_S6_Space Black stainless steel',
 		size: '44',
 		series: 'Серия 6',
@@ -1000,7 +1000,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Space Black Titanium.webp',
+		pic: '/public/size-series/S6/44/44_S6_Space Black Titanium.webp',
 		sku: '44_S6_Space Black Titanium',
 		size: '44',
 		series: 'Серия 6',
@@ -1008,7 +1008,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Space Grey_al.webp',
+		pic: '/public/size-series/S6/44/44_S6_Space Grey_al.webp',
 		sku: '44_S6_Space Grey_al',
 		size: '44',
 		series: 'Серия 6',
@@ -1016,7 +1016,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S6/44/44_S6_Titanium.webp',
+		pic: '/public/size-series/S6/44/44_S6_Titanium.webp',
 		sku: '44_S6_Titanium',
 		size: '44',
 		series: 'Серия 6',
@@ -1025,7 +1025,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/Серия SE (1nd generation)/44/44_SE1_Gold_al.webp',
+		pic: '/public/size-series/Серия SE (1nd generation)/44/44_SE1_Gold_al.webp',
 		sku: '44_SE1_Gold_al',
 		size: '44',
 		series: 'Серия SE (1-ое поколение)',
@@ -1033,7 +1033,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (1nd generation)/44/44_SE1_Silver_al.webp',
+		pic: '/public/size-series/Серия SE (1nd generation)/44/44_SE1_Silver_al.webp',
 		sku: '44_SE1_Silver_al',
 		size: '44',
 		series: 'Серия SE (1-ое поколение)',
@@ -1041,7 +1041,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (1nd generation)/44/44_SE1_Space Grey_al.webp',
+		pic: '/public/size-series/Серия SE (1nd generation)/44/44_SE1_Space Grey_al.webp',
 		sku: '44_SE1_Space Grey_al',
 		size: '44',
 		series: 'Серия SE (1-ое поколение)',
@@ -1050,7 +1050,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/Серия SE (2nd generation)/44/44_SE2_Midnight_al.webp',
+		pic: '/public/size-series/Серия SE (2nd generation)/44/44_SE2_Midnight_al.webp',
 		sku: '44_SE2_Midnight_al',
 		size: '44',
 		series: 'Серия SE (2-ое поколение)',
@@ -1058,7 +1058,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (2nd generation)/44/44_SE2_Silver_al.webp',
+		pic: '/public/size-series/Серия SE (2nd generation)/44/44_SE2_Silver_al.webp',
 		sku: '44_SE2_Silver_al',
 		size: '44',
 		series: 'Серия SE (2-ое поколение)',
@@ -1066,7 +1066,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/Серия SE (2nd generation)/44/44_SE2_Starlight_al.webp',
+		pic: '/public/size-series/Серия SE (2nd generation)/44/44_SE2_Starlight_al.webp',
 		sku: '44_SE2_Starlight_al',
 		size: '44',
 		series: 'Серия SE (2-ое поколение)',
@@ -1074,14 +1074,14 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Blue.webp',
+		pic: '/public/size-series/S7/45/45_S7_Blue.webp',
 		sku: '45_S7_Blue',
 		size: '45',
 		series: 'Серия 7',
 		color: 'blue'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Gold stainless steel.webp',
+		pic: '/public/size-series/S7/45/45_S7_Gold stainless steel.webp',
 		sku: '45_S7_Gold stainless steel',
 		size: '45',
 		series: 'Серия 7',
@@ -1089,7 +1089,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Graphite stainless steel.webp',
+		pic: '/public/size-series/S7/45/45_S7_Graphite stainless steel.webp',
 		sku: '45_S7_Graphite stainless steel',
 		size: '45',
 		series: 'Серия 7',
@@ -1097,21 +1097,21 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Green.webp',
+		pic: '/public/size-series/S7/45/45_S7_Green.webp',
 		sku: '45_S7_Green',
 		size: '45',
 		series: 'Серия 7',
 		color: 'green'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Midnight.webp',
+		pic: '/public/size-series/S7/45/45_S7_Midnight.webp',
 		sku: '45_S7_Midnight',
 		size: '45',
 		series: 'Серия 7',
 		color: 'midnight'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Natural titanium.webp',
+		pic: '/public/size-series/S7/45/45_S7_Natural titanium.webp',
 		sku: '45_S7_Natural titanium',
 		size: '45',
 		series: 'Серия 7',
@@ -1119,14 +1119,14 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Red.webp',
+		pic: '/public/size-series/S7/45/45_S7_Red.webp',
 		sku: '45_S7_Red',
 		size: '45',
 		series: 'Серия 7',
 		color: 'red'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Silver stainless steel.webp',
+		pic: '/public/size-series/S7/45/45_S7_Silver stainless steel.webp',
 		sku: '45_S7_Silver stainless steel',
 		size: '45',
 		series: 'Серия 7',
@@ -1134,7 +1134,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Space Black stainless steel.webp',
+		pic: '/public/size-series/S7/45/45_S7_Space Black stainless steel.webp',
 		sku: '45_S7_Space Black stainless steel',
 		size: '45',
 		series: 'Серия 7',
@@ -1142,7 +1142,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Space Black titanium.webp',
+		pic: '/public/size-series/S7/45/45_S7_Space Black titanium.webp',
 		sku: '45_S7_Space Black titanium',
 		size: '45',
 		series: 'Серия 7',
@@ -1150,7 +1150,7 @@ export const newCase = [
 		material: 'titanium'
 	},
 	{
-		pic: './public/size-series/S7/45/45_S7_Starlight.webp',
+		pic: '/public/size-series/S7/45/45_S7_Starlight.webp',
 		sku: '45_S7_Starlight',
 		size: '45',
 		series: 'Серия 7',
@@ -1158,7 +1158,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S8/45/45_S8_Gold stainless steel.webp',
+		pic: '/public/size-series/S8/45/45_S8_Gold stainless steel.webp',
 		sku: '45_S8_Gold stainless steel',
 		size: '45',
 		series: 'Серия 8',
@@ -1166,7 +1166,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Graphite stainless steel.webp',
+		pic: '/public/size-series/S8/45/45_S8_Graphite stainless steel.webp',
 		sku: '45_S8_Graphite stainless steel',
 		size: '45',
 		series: 'Серия 8',
@@ -1174,7 +1174,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Midnight_al.webp',
+		pic: '/public/size-series/S8/45/45_S8_Midnight_al.webp',
 		sku: '45_S8_Midnight_al',
 		size: '45',
 		series: 'Серия 8',
@@ -1182,7 +1182,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Red_al.webp',
+		pic: '/public/size-series/S8/45/45_S8_Red_al.webp',
 		sku: '45_S8_Red_al',
 		size: '45',
 		series: 'Серия 8',
@@ -1190,7 +1190,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Silver stainless steel.webp',
+		pic: '/public/size-series/S8/45/45_S8_Silver stainless steel.webp',
 		sku: '45_S8_Silver stainless steel',
 		size: '45',
 		series: 'Серия 8',
@@ -1198,7 +1198,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Silver_al.webp',
+		pic: '/public/size-series/S8/45/45_S8_Silver_al.webp',
 		sku: '45_S8_Silver_al',
 		size: '45',
 		series: 'Серия 8',
@@ -1206,7 +1206,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Space Black stainless steel.webp',
+		pic: '/public/size-series/S8/45/45_S8_Space Black stainless steel.webp',
 		sku: '45_S8_Space Black stainless steel',
 		size: '45',
 		series: 'Серия 8',
@@ -1214,7 +1214,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S8/45/45_S8_Starlight_al.webp',
+		pic: '/public/size-series/S8/45/45_S8_Starlight_al.webp',
 		sku: '45_S8_Starlight_al',
 		size: '45',
 		series: 'Серия 8',
@@ -1223,7 +1223,7 @@ export const newCase = [
 	},
 
 	{
-		pic: './public/size-series/S9/45/45_S9_Gold stainless steel.webp',
+		pic: '/public/size-series/S9/45/45_S9_Gold stainless steel.webp',
 		sku: '45_S9_Gold stainless steel',
 		size: '45',
 		color: 'gold',
@@ -1231,7 +1231,7 @@ export const newCase = [
 		series: 'S9'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Graphite stainless steel.webp',
+		pic: '/public/size-series/S9/45/45_S9_Graphite stainless steel.webp',
 		sku: '45_S9_Graphite stainless steel',
 		size: '45',
 		series: 'Серия 9',
@@ -1239,7 +1239,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Pink_al.webp',
+		pic: '/public/size-series/S9/45/45_S9_Pink_al.webp',
 		sku: '45_S9_Pink_al',
 		size: '45',
 		series: 'Серия 9',
@@ -1247,7 +1247,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Red_al.webp',
+		pic: '/public/size-series/S9/45/45_S9_Red_al.webp',
 		sku: '45_S9_Red_al',
 		size: '45',
 		series: 'Серия 9',
@@ -1255,7 +1255,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Silver stainless steel.webp',
+		pic: '/public/size-series/S9/45/45_S9_Silver stainless steel.webp',
 		sku: '45_S9_Silver stainless steel',
 		size: '45',
 		series: 'Серия 9',
@@ -1263,7 +1263,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Silver_al.webp',
+		pic: '/public/size-series/S9/45/45_S9_Silver_al.webp',
 		sku: '45_S9_Silver_al',
 		size: '45',
 		series: 'Серия 9',
@@ -1271,7 +1271,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Space Black stainless steel.webp',
+		pic: '/public/size-series/S9/45/45_S9_Space Black stainless steel.webp',
 		sku: '45_S9_Space Black stainless steel',
 		size: '45',
 		series: 'Серия 9',
@@ -1279,7 +1279,7 @@ export const newCase = [
 		material: 'stainless steel'
 	},
 	{
-		pic: './public/size-series/S9/45/45_S9_Starlight_al.webp',
+		pic: '/public/size-series/S9/45/45_S9_Starlight_al.webp',
 		sku: '45_S9_Starlight_al',
 		size: '45',
 		series: 'Серия 9',
@@ -1287,7 +1287,7 @@ export const newCase = [
 		material: 'aluminum'
 	},
 	{
-		pic: './public/size-series/S9/45/41_S9_Midnight_al.webp',
+		pic: '/public/size-series/S9/45/41_S9_Midnight_al.webp',
 		sku: '41_S9_Midnight_al',
 		size: '41',
 		series: 'Серия 9',
@@ -1295,3 +1295,31 @@ export const newCase = [
 		material: 'aluminum'
 	}
 ]
+export const caseDict = {
+	"rose gold": "Розовое золото",
+	"yellow gold": "Желтое золото",
+	"gold": "Золото",
+	"silver": "Серебро",
+	"space black": "Космически чёрный",
+	"space grey": "Космически серый",
+	"white ceramic": "Белая керамика",
+	"grey": "Серый",
+	"dark": "Тёмный",
+	"light": "Светлый",
+	"white": "Белый",
+	"blue": "Синий",
+	"graphite": "Графитовый",
+	"red": "Красный",
+	"black": "Чёрный",
+	"titanium": "Титановый",
+	"midnight": "Полуночный",
+	"starlight": "Звёздный",
+	"green": "Зелёный",
+	"natural titanium": "Настоящий титан",
+	"pink": "Розовый",
+
+	"aluminum": "Алюминий",
+	"stainless steel": "Нержавеющая сталь",
+	"ceramic": "Керамический",
+	undefined: "Стандарт"
+}

@@ -1,8 +1,8 @@
 <template>
-		<section class="simpleBtn" v-if="watchStore.state !== elState">
+		<section class="simpleBtn" v-if="props.name !== elState">
 			<button
 				@click="handleBtnClick($event)"
-				:class="{ hidden: watchStore.state === elState }"
+				:class="{ hidden: props.name === elState }"
 			>
 				<span class="menu__btn-wrapper">
 					<slot name="Icon"></slot>
@@ -13,8 +13,8 @@
 			</button>
 		</section>
 		<section class="swipersBtn" v-else>
+			<div v-if="props.name === elState && props.additional" class="swiper__wrapper">
 			<swiper
-				v-if="watchStore.state === elState"
 				:navigation="swiperOptions.navigation"
 				:modules="modules"
 				:class="`${props.name}Swiper`"
@@ -46,8 +46,9 @@
 					slot="button-next"
 				></div>
 			</swiper>
+			</div>
+			<div class="swiper__wrapper" v-if="props.name === elState">
 			<swiper
-				v-if="watchStore.state === elState"
 				:navigation="swiperOptions.navigation"
 				:modules="modules"
 				:class="`${props.name}Swiper`"
@@ -59,11 +60,11 @@
 			>
 				<swiper-slide
 					v-for="(item, index) in menuItems"
+					@click="handleSwiperSlideClick(item)"
 					:key="index"
-					style="padding: 0 0.2em"
-					@click="handleSwiperClick($event)"
 				>
-					<b :id="`${props.name}-item`" v-if="watchStore.currentWatch.series === item">{{
+					<!-- @click="handleSwiperClick($event)" -->
+					<b :id="`${props.name}-item`" v-if="watchStore.currentWatch[elState] === item " >{{
 						item
 					}}</b>
 					<span :id="`${props.name}-item`" v-else>{{ item }}</span>
@@ -79,12 +80,13 @@
 					slot="button-next"
 				></div>
 			</swiper>
+			</div>
 		</section>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { State, useWatchStore } from '@/stores/watch'
+import { State, useWatchStore } from '@/stores/useWatchStore'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import {useRouter} from "vue-router";
@@ -126,7 +128,10 @@ const handleBtnClick = async (event: Event) => {
 const handleSwiperClick = async (event: Event) => {
 	emit('swiperClick', event)
 }
-
+const handleSwiperSlideClick = async(item: any)=>{
+	const idx = watchStore.slideItems.findIndex(slide => slide.name === item);
+	watchStore.gotoslide = idx >= 0 ? idx : 0;
+}
 const name = ref<string>(props.name)
 const title = ref<string>(props.title)
 const swiperRefMenu: any = ref(null)
@@ -162,7 +167,7 @@ button {
 }
 .bandSwiper,
 .bandMatSwiper,
-.seriesSwiper {
+.seriesSwiper, .sizeSwiper, .caseSwiper {
 	border-radius: 2em;
 	padding: 1em;
 	align-items: center;
@@ -260,13 +265,17 @@ b[id$='item'] {
 		opacity: 0;
 	}
 }
-.bandSwiper .swiper-wrapper,
-.bandMatSwiper,
-.seriesSwiper,
-.swiper-wrapper {
+[class*="swiper"], [class*="Swiper"] {
 	align-items: center;
 	word-break: keep-all;
-	padding: 0.3em;
+	padding: 0;
+}
+.swiper__wrapper{
+	width: 400px;
+	min-width: 0;
+}
+section.swipersBtn{
+	display: inline-flex;
 }
 :root {
 	--swiper-navigation-color: #989898 !important;

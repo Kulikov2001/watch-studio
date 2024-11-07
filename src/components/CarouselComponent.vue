@@ -16,10 +16,10 @@
 			:initialSlide="2"
 			:slideToClickedSlide="true"
 			:speed="500"
-			:breakpoints="{ 1200: { slidesPerView: 5 }, 800: { slidesPerView: 3 } }"
+			:breakpoints="{ 1200: { slidesPerView: 5 }, 800: { slidesPerView: 3 }, 200: {slidesPerView: 1} }"
 		>
 			<img
-				height="400"
+				height="300"
 				v-if="watchStore.state === State.CASE_CHOICE"
 				:src="storeBand"
 				class="pinned-img"
@@ -43,7 +43,7 @@
         }
       -->
 			<img
-				height="400"
+				height="300"
 				v-if="watchStore.state === State.BAND_CHOICE"
 				:src="storeCase"
 				class="pinned-img"
@@ -64,7 +64,7 @@
 				"
 			>
 				<img
-					height="400"
+					height="300"
 					:src="item.pic"
 					loading="lazy"
 					style="position: relative; z-index: 0; user-select: none; margin: 0 auto"
@@ -77,12 +77,12 @@
 			</swiper-slide>
 			<div
 				class="swiper-button-prev bigswiper__btn"
-				@click="swiperRef.slidePrev()"
+				@click.stop="swiperRef.slidePrev()"
 				slot="button-prev"
 			></div>
 			<div
 				class="swiper-button-next bigswiper__btn"
-				@click="swiperRef.slideNext()"
+				@click.stop="swiperRef.slideNext()"
 				slot="button-next"
 			></div>
 		</swiper>
@@ -96,7 +96,7 @@
 			@swiper="onSwiper2"
 			@slideChange="onSlideChange"
 			:scrollbar="{ draggable: true }"
-			:slides-per-view="3"
+			:slides-per-view="1"
 			style="margin: 0 auto; width: 100%; user-select: none"
 			:centeredSlides="true"
 			:lazyPreloadPrevNext="4"
@@ -125,7 +125,7 @@
 				"
 			>
 				<img
-					height="400"
+					height="300"
 					:src="item.pic"
 					loading="lazy"
 					style="position: relative; z-index: 0; user-select: none; margin: 0 auto"
@@ -137,12 +137,12 @@
 			</swiper-slide>
 			<div
 				class="swiper-button-prev bigswiper__btn"
-				@click="swiperRef2.slidePrev()"
+				@click.stop="swiperRef2.slidePrev()"
 				slot="button-prev"
 			></div>
 			<div
 				class="swiper-button-next bigswiper__btn"
-				@click="swiperRef2.slideNext()"
+				@click.stop="swiperRef2.slideNext()"
 				slot="button-next"
 			></div>
 		</swiper>
@@ -187,10 +187,12 @@ import { Navigation, Pagination, Scrollbar, Virtual } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { useWatchStore, State } from '@/stores/watch'
+import { useWatchStore, State } from '@/stores/useWatchStore'
 import { computed, ref, toRefs, watch } from 'vue'
 import { EffectFade } from 'swiper/modules'
-import type {ISlideItem} from "@/stores/watch";
+import type {ISlideItem} from "@/stores/useWatchStore";
+import router from "@/router";
+import {useRoute} from "vue-router";
 
 const modules = [Navigation, Pagination, Scrollbar, EffectFade, Virtual]
 const watchStore = useWatchStore()
@@ -241,17 +243,17 @@ const moveToSlide = (index: number) => {
 	}
 }
 watch(
-	() => props.gotoslide,
+	() => watchStore.gotoslide,
 	(selectedSlide) => {
 		moveToSlide(selectedSlide??1)
 	}
 )
-
+const route = useRoute();
 //const slideItems = computed(() => slideItems.value)
 const onSlideChange = (swiper: any) => {
 	if (watchStore.currentWatch && slideItems.value.length >= 2) {
 		watchStore.currentWatch.size = slideItems.value[swiper.activeIndex].size ?? '41'
-		if (watchStore.state === State.BAND_CHOICE) {
+		if (route.path === '/bands') {
 			watchStore.currentWatch.desc = slideItems.value[swiper.activeIndex].desc ?? 'desc'
 			watchStore.currentWatch.brand = slideItems.value[swiper.activeIndex].brand ?? ''
 			watchStore.currentWatch.href =
@@ -259,17 +261,47 @@ const onSlideChange = (swiper: any) => {
 			watchStore.currentWatch.sku_band = slideItems.value[swiper.activeIndex].sku
 			watchStore.currentWatch.bandSize = slideItems.value[swiper.activeIndex].size
 			watchStore.currentWatch.bandMaterial = slideItems.value[swiper.activeIndex].material
-		} else if (watchStore.state === State.CASE_CHOICE) {
+		} else if (route.path === '/case') {
 			watchStore.currentWatch.caseMaterial = slideItems.value[swiper.activeIndex].material
 			watchStore.currentWatch.caseColor = slideItems.value[swiper.activeIndex].color
 			watchStore.currentWatch.sku_case = slideItems.value[swiper.activeIndex].sku
-		} else if (watchStore.state === State.SERIES_CHOICE) {
+		} else if (route.path === '/series') {
 			watchStore.currentWatch.series! = slideItems.value[swiper.activeIndex].name!
-		} else if (watchStore.state === State.SIZE_CHOICE) {
+		} else if (route.path === '/size') {
 			watchStore.currentWatch.caseSize = slideItems.value[swiper.activeIndex].size
 		}
 	} else {
 		//console.error(watchStore.currentWatch)
+
+		/**
+		 * 	switch (route.path) {
+		 * 		case '/bands':
+		 * 			watchStore.currentWatch.desc = slideItems.value[swiper.activeIndex].desc ?? 'desc'
+		 * 			watchStore.currentWatch.brand = slideItems.value[swiper.activeIndex].brand ?? ''
+		 * 			watchStore.currentWatch.href =
+		 * 				slideItems.value[swiper.activeIndex].href ?? 'https://lyambda.com/'
+		 * 			watchStore.currentWatch.sku_band = slideItems.value[swiper.activeIndex].sku
+		 * 			watchStore.currentWatch.bandSize = slideItems.value[swiper.activeIndex].size
+		 * 			watchStore.currentWatch.bandMaterial = slideItems.value[swiper.activeIndex].material
+		 * 			break
+		 * 		case '/case':
+		 * 			watchStore.currentWatch.caseMaterial = slideItems.value[swiper.activeIndex].material
+		 * 			watchStore.currentWatch.caseColor = slideItems.value[swiper.activeIndex].color
+		 * 			watchStore.currentWatch.sku_case = slideItems.value[swiper.activeIndex].sku
+		 * 			break
+		 * 		case '/series':
+		 * 			watchStore.currentWatch.series! = slideItems.value[swiper.activeIndex].name!
+		 * 			break
+		 * 		case '/size':
+		 * 			watchStore.currentWatch.caseSize = slideItems.value[swiper.activeIndex].size
+		 * 			break
+		 * 		default:
+		 * 			console.error(swiper);
+		 * 			break
+		 * 	}
+		 *
+		 *
+		 */
 	}
 }
 const adaptiveSize = computed(
@@ -325,7 +357,7 @@ a {
 .pinned-img {
 	position: absolute;
 	top: 0;
-	left: 40vw;
+	left: calc(50% - 150px);
 }
 
 _38to40 {

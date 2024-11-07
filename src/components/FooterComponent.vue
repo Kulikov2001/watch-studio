@@ -5,17 +5,17 @@
 			<IconSeries/>
 		</template>
 	</button-component2>
-	<button-component2 @click="emitSize" :title="'Размер'" :name="'size'" :menu-items="watchStore.sizes">
+	<button-component2 @click="emitSize" :title="'Размер'" :name="'size'" :menu-items="availableSizes">
 		<template #Icon>
 			<IconSize/>
 		</template>
 	</button-component2>
-		<button-component2 @click="emitCase" :title="'Корпус'" :name="'case'" :menu-items="watchStore.casesMaterials">
+		<button-component2 @click="emitCase" :title="'Корпус'" :name="'case'" :menu-items="availableCases">
 			<template #Icon>
 				<IconCase/>
 			</template>
 		</button-component2>
-		<button-component2 @click="emitBand" :title="'Ремешок'" :name="'band'" :menu-items="watchStore.bandsMaterial" :additional="watchStore.bandsBrand">
+		<button-component2 @click="emitBand" :title="'Ремешок'" :name="'band'" :menu-items="availableBandMaterial" :additional="availableBandBrand">
 			<template #Icon>
 				<IconBand/>
 			</template>
@@ -30,14 +30,16 @@ import IconBand from '@/components/icons/IconBand.vue'
 import IconCase from '@/components/icons/IconCase.vue'
 import IconSeries from '@/components/icons/IconSeries.vue'
 import ButtonComponent2 from '@/components/ui/ButtonComponent2.vue'
-import { State, useWatchStore } from '@/stores/watch'
+import { State, useWatchStore } from '@/stores/useWatchStore'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { ref } from 'vue'
+import {computed, ref} from 'vue'
 import {useRouter} from "vue-router";
+import {newCase, caseDict} from "@/assets/newCase";
+import {newBands, bandDict} from "@/assets/newBands";
 const modules = [Navigation, Pagination, Scrollbar, EffectFade]
 
 const bandSwiper = () => {}
@@ -52,11 +54,16 @@ const emit = defineEmits<{
 	(e: 'subItem', $event: Event): void
 }>()
 const router = useRouter();
+// router.beforeEach((to)=>{
+// 	const store = useWatchStore();
+// 	if (store.currentWatch) return to.path;
+// });
 const emitSize = () => {
 	router.push('/size')
 	emit('size')
 }
 const emitCase = () => {
+	sessionStorage.setItem('series', watchStore.currentWatch!.series!)
 	router.push('/case')
 	emit('case')
 }
@@ -71,6 +78,10 @@ const emitSeries = () => {
 const handleMenuItemClick = async (event: Event) => {
 	emit('subItem', event)
 }
+const availableSizes = computed(()=> Array.from(new Set(newCase.filter(i=>i.series === watchStore.currentWatch.series).map(i=>i.size))));
+const availableCases = computed(()=> Array.from(new Set(newCase.filter(i=>i.series === watchStore.currentWatch.series && i.size === watchStore.currentWatch.size).map(i => caseDict[i.color]))));
+const availableBandBrand = computed(()=> Array.from(new Set(newBands.filter(i=>i.size === parseInt(watchStore.currentWatch.size) < 42 ? 'small' : 'large').map(i => i.brand))));
+const availableBandMaterial = computed(()=> Array.from(new Set(newBands.filter(i=>i.size === parseInt(watchStore.currentWatch.size) < 42 ? 'small' : 'large').map(i => bandDict[i.material]))));
 //const handleCaseItemClick = async(case: string) =>{};
 const props = defineProps<{
 	variations?: object
@@ -198,7 +209,7 @@ b[id$='item'] {
 .swiper-wrapper {
 	align-items: center;
 	word-break: keep-all;
-	padding: 0.3em;
+	padding: 0;
 }
 :root {
 	--swiper-navigation-color: #989898 !important;

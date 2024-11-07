@@ -20,7 +20,7 @@ import MenuComponent from '@/components/FooterComponent.vue'
 import CarouselComponent from '@/components/CarouselComponent.vue'
 import TopMenuComponent from '@/components/HeaderComponent.vue'
 import { onMounted, ref } from 'vue'
-import { useWatchStore, State } from '@/stores/watch'
+import { useWatchStore, State } from '@/stores/useWatchStore'
 import {useRouter} from "vue-router";
 
 const watchStore = useWatchStore()
@@ -188,7 +188,8 @@ const handleSave = async () => {
 }
 @media screen and (min-width: 1000px) {
 	.menu__wrapper {
-		width: 70%;
+		width: 80%;
+		flex-wrap: wrap;
 	}
 }
 @media screen and (max-width: 1000px) {

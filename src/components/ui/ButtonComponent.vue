@@ -86,7 +86,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { State, useWatchStore } from '@/stores/watch'
+import { State, useWatchStore } from '@/stores/useWatchStore'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 const modules = [Navigation, Pagination, Scrollbar, EffectFade]
 

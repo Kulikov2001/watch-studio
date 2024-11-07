@@ -22,11 +22,9 @@
           </TransitionGroup>
         </div>
       </div-->
-<!--			<button-component @click="emitSave" style="background: #007aff; color: white">-->
-<!--				<template #ButtonContent>-->
-<!--					{{ 'Подробнее' }}-->
-<!--				</template>-->
-<!--			</button-component>-->
+			<button :disabled="!!sku" @click="emitSave" class="more-btn">
+				Подробнее
+			</button>
 		</div>
 	</div>
 </template>
@@ -34,15 +32,19 @@
 <script setup lang="ts">
 import ButtonComponent from '@/components/ui/ButtonComponent2.vue'
 import { ref } from 'vue'
+import {useWatchStore} from "@/stores/useWatchStore";
+const store = useWatchStore();
+const sku = ref(store.currentWatch.sku_band);
 const emit = defineEmits<{
 	(e: 'save'): void
 }>()
 const emitSave = async () => {
+	window.location.href = `https://lyambda.com/?s=${store.currentWatch.sku_band}`
 	emit('save')
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 #overlay {
 	position: absolute;
 	background: black;
@@ -67,6 +69,16 @@ const emitSave = async () => {
 @media screen and (max-width: 600px) {
 	.top-menu-container {
 		flex-wrap: wrap;
+	}
+}
+.more-btn{
+	background: #007aff; font-size: 24px; padding: .7em 1.3em; border-radius: 1.5em; cursor: pointer; color: white;
+	transition: background .224s ease;
+	&:hover{
+		background: #005bc4;
+	}
+	&[disabled="true"]{
+		background: #cccccc;
 	}
 }
 </style>

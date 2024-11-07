@@ -13,6 +13,9 @@ export default defineConfig({
   //     },
   //   },
   // },
+	build: {
+		minify: false,
+	},
   plugins: [
     vue(),
     vueJsx(),

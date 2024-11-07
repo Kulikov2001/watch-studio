@@ -6,7 +6,7 @@ import { newBands } from '@/assets/newBands'
 import { colorDict, materialDict, adjectiveMaterialDict } from '@/assets/dict'
 //import {bands41, bands45, cases41, cases45, series} from "@/assets/mocks";
 
-export interface Watch {
+export interface UseWatchStore {
 	size: string
 	material?: string
 	brand?: string
@@ -54,7 +54,7 @@ export const useWatchStore = defineStore('watch', () => {
 	const series = Array.from(new Set(newSeries.map((item) => item.name)))
 	const bandsMaterial = Array.from(new Set(newBands.map((item) => item.material?? 'ceramic')))
 	const slideItems = ref<ISlideItem[]>([]);
-	const currentWatch = ref<Watch>({
+	const currentWatch = ref<UseWatchStore>( {
 		size: '44',
 		material: newCase[0].material,
 		brand: Object.keys(bandsBrand)[0],
@@ -68,7 +68,8 @@ export const useWatchStore = defineStore('watch', () => {
 		bandMaterial: newBands[0].material,
 		caseColor: newCase[0].color,
 		caseMaterial: newCase[0].material
-	})
+	});
+	const gotoslide = ref(0);
 	const currMenuItems: any[] = [];
 	const currAdditionalItems: any[] = [];
 	const getSelfPics = function () {
@@ -88,26 +89,57 @@ export const useWatchStore = defineStore('watch', () => {
 				src: 'default'
 			}
 		}
-		result.band.src = newBands
-			.find((obj) => obj.sku === currentWatch.value.sku_band)!
-			.pic.toString()
-		result.case.src = newCase
-			.find((obj) => obj.sku === currentWatch.value.sku_case)!
-			.pic.toString()
-		return result
+		try{
+		result.band.src = newBands.filter((obj) => obj.sku === currentWatch.value.sku_band)[0].pic
+		}catch(e){
+			console.error('band pic error');
+			console.error(e);
+			result.band.src = newBands[0].pic.toString()
+		}
+		try{
+			result.case.src = newCase.filter((obj) => obj.sku === currentWatch.value.sku_case)[0].pic
+		} catch(e){
+			console.error('band pic error');
+			console.error(e);
+			result.case.src = newCase[0].pic.toString()
+		}
+			return result
 	}
 	// eslint-enable @typescript-eslint/no-explicit-any
+	function filterBySize(arr: any[], size: string) {
+		const result = [];
+		if ([38, 39, 40, 41].includes(parseInt(currentWatch.value.caseSize!))) {
+			result.push(arr.filter(item => [38, 39, 40, 41].includes(parseInt(item.size))));
+		} else if ([42, 43, 44, 45].includes(parseInt(currentWatch.value.caseSize!))) {
+			result.push(arr.filter(item => [42, 43, 44, 45].includes(parseInt(item.size))));
+		} else {
+			result.push(arr.filter(item => item.size === currentWatch.value.caseSize));
+		}
+	}
 	const setSlideItemsToSeries = async () => {
 		slideItems.value = newSeries;
 	}
 	const setSlideItemsToCase = async () => {
-		slideItems.value = newCase;
+		slideItems.value = newCase.filter(
+			(item) =>
+				item.series === currentWatch.value.series &&
+				item.size === currentWatch.value.caseSize
+		);
 	}
 	const setSlideItemsToBands = async () => {
-		slideItems.value = newBands;
+		slideItems.value = newBands.filter(band => +currentWatch.value.caseSize! >= 42 ? band.size === 'large': band.size === 'small');
 	}
+
 	const setSlideItemsToSizes = async () => {
-		slideItems.value = newCase.filter((item) => item.size === currentWatch.value.size);
+		// alert(JSON.stringify(newCase.filter((item) => item.series === currentWatch.value.series)))
+		slideItems.value = newCase
+			.filter((item) => item.series === currentWatch.value.series)
+			.reduce((acc: any, item: any) => {
+				if (!acc.some((i: any) => i.size === item.size)) {
+					acc.push(item)
+				}
+				return acc
+			}, [])
 	}
 	return {
 		state,
@@ -123,6 +155,7 @@ export const useWatchStore = defineStore('watch', () => {
 		newSeries,
 		colorDict,
 		materialDict,
+		gotoslide,
 		bandsMaterial,
 		currMenuItems,
 		currAdditionalItems,
