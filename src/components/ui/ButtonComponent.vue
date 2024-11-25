@@ -71,12 +71,12 @@
 				</swiper-slide>
 				<div
 					class="swiper-button-prev bigswiper__btn"
-					@click="swiperRefMenu.slidePrev()"
+					@click.prevent="swiperRefMenu.slidePrev()"
 					slot="button-prev"
 				></div>
 				<div
 					class="swiper-button-next bigswiper__btn"
-					@click="swiperRefMenu.slideNext()"
+					@click.prevent="swiperRefMenu.slideNext()"
 					slot="button-next"
 				></div>
 			</swiper>

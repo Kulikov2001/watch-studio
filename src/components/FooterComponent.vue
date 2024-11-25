@@ -36,7 +36,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import {computed, ref} from 'vue'
+import {computed, onMounted, ref, watch} from 'vue'
 import {useRouter} from "vue-router";
 import {newCase, caseDict} from "@/assets/newCase";
 import {newBands, bandDict} from "@/assets/newBands";
@@ -63,7 +63,7 @@ const emitSize = () => {
 	emit('size')
 }
 const emitCase = () => {
-	sessionStorage.setItem('series', watchStore.currentWatch!.series!)
+	//sessionStorage.setItem('series', watchStore.currentWatch!.series!)
 	router.push('/case')
 	emit('case')
 }
@@ -78,14 +78,26 @@ const emitSeries = () => {
 const handleMenuItemClick = async (event: Event) => {
 	emit('subItem', event)
 }
+/*
 const availableSizes = computed(()=> Array.from(new Set(newCase.filter(i=>i.series === watchStore.currentWatch.series).map(i=>i.size))));
 const availableCases = computed(()=> Array.from(new Set(newCase.filter(i=>i.series === watchStore.currentWatch.series && i.size === watchStore.currentWatch.size).map(i => caseDict[i.color]))));
 const availableBandBrand = computed(()=> Array.from(new Set(newBands.filter(i=>i.size === parseInt(watchStore.currentWatch.size) < 42 ? 'small' : 'large').map(i => i.brand))));
 const availableBandMaterial = computed(()=> Array.from(new Set(newBands.filter(i=>i.size === parseInt(watchStore.currentWatch.size) < 42 ? 'small' : 'large').map(i => bandDict[i.material]))));
-//const handleCaseItemClick = async(case: string) =>{};
+//const handleCaseItemClick = async(case: string) =>{};*/
+// const availableSizes: any = ref([]);
+// const availableCases: any = ref([]);
+// const availableBandBrand: any = ref([]);
+// const availableBandMaterial: any = ref([]);
+const availableSizes: any = computed(()=> watchStore.availableSizes);
+const availableCases: any = computed(()=> watchStore.availableCases);
+const availableBandBrand: any = computed(()=> watchStore.availableBandBrand);
+const availableBandMaterial: any = computed(()=> watchStore.availableBandMaterial);
 const props = defineProps<{
 	variations?: object
 }>()
+// watch(()=> watchStore.avail, (newState) =>{
+//
+// };
 const swiperOptions = {
 	navigation: {
 		prevEl: '.swiper-button-prev',
@@ -100,6 +112,12 @@ const onSwiperMenu = (swiper: any) => {
 const onSwiperAdditionalMenu = (swiper: any) => {
 	swiperRefAdditional.value = swiper
 }
+// onMounted(()=>{
+// 	availableSizes.value = watchStore.availableSizes;
+// 	availableCases.value = watchStore.availableCases;
+// 	availableBandBrand.value = watchStore.availableBandBrand;
+// 	availableBandMaterial.value = watchStore.availableBandMaterial;
+// });
 </script>
 
 <style scoped>
@@ -235,6 +253,7 @@ b[id$='item'] {
 .menu__wrapper{
 	place-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 	justify-content: center;
 	margin: 3em auto 1em;
@@ -243,6 +262,11 @@ b[id$='item'] {
 @media screen and (min-width:1000px) {
 	.menu__wrapper{
 		width: 70%;
+	}
+}
+@media screen and (max-width: 500px){
+	.swiper-button-next, .swiper-button-prev, .bigswiper__btn{
+		display: none;
 	}
 }
 </style>

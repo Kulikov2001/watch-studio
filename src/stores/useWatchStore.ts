@@ -1,8 +1,8 @@
-import { ref } from 'vue'
+import {computed, ref} from 'vue'
 import { defineStore } from 'pinia'
 import { newSeries } from '@/assets/series'
-import { newCase } from '@/assets/newCase'
-import { newBands } from '@/assets/newBands'
+import {caseDict, newCase} from '@/assets/newCase'
+import {bandDict, newBands} from '@/assets/newBands'
 import { colorDict, materialDict, adjectiveMaterialDict } from '@/assets/dict'
 //import {bands41, bands45, cases41, cases45, series} from "@/assets/mocks";
 
@@ -54,6 +54,7 @@ export const useWatchStore = defineStore('watch', () => {
 	const series = Array.from(new Set(newSeries.map((item) => item.name)))
 	const bandsMaterial = Array.from(new Set(newBands.map((item) => item.material?? 'ceramic')))
 	const slideItems = ref<ISlideItem[]>([]);
+	let activeIndex = ref<any>(0);
 	const currentWatch = ref<UseWatchStore>( {
 		size: '44',
 		material: newCase[0].material,
@@ -71,6 +72,10 @@ export const useWatchStore = defineStore('watch', () => {
 	});
 	const gotoslide = ref(0);
 	const currMenuItems: any[] = [];
+	const availableSizes = computed(()=> Array.from(new Set(newCase.filter(i=>i.series === currentWatch.value.series).map(i=>i.size))));
+	const availableCases = computed(()=> Array.from(new Set(newCase.filter(i=>i.series === currentWatch.value.series && i.size === (currentWatch.value.size ?? currentWatch.value.caseSize)).map(i => caseDict[i.color]))));
+	const availableBandBrand = computed(()=> Array.from(new Set(newBands.filter(i=> i.size === parseInt(currentWatch.value.size) < 42 ? 'small' : 'large').map(i => i.brand))));
+	const availableBandMaterial = computed(()=> Array.from(new Set(newBands.filter(i=> i.size === parseInt(currentWatch.value.size) < 42 ? 'small' : 'large').map(i => bandDict[i.material]))));
 	const currAdditionalItems: any[] = [];
 	const getSelfPics = function () {
 		interface StringArray {
@@ -110,8 +115,8 @@ export const useWatchStore = defineStore('watch', () => {
 		const result = [];
 		if ([38, 39, 40, 41].includes(parseInt(currentWatch.value.caseSize!))) {
 			result.push(arr.filter(item => [38, 39, 40, 41].includes(parseInt(item.size))));
-		} else if ([42, 43, 44, 45].includes(parseInt(currentWatch.value.caseSize!))) {
-			result.push(arr.filter(item => [42, 43, 44, 45].includes(parseInt(item.size))));
+		} else if ([42, 43, 44, 45,49].includes(parseInt(currentWatch.value.caseSize!))) {
+			result.push(arr.filter(item => [42, 43, 44, 45,49].includes(parseInt(item.size))));
 		} else {
 			result.push(arr.filter(item => item.size === currentWatch.value.caseSize));
 		}
@@ -123,7 +128,7 @@ export const useWatchStore = defineStore('watch', () => {
 		slideItems.value = newCase.filter(
 			(item) =>
 				item.series === currentWatch.value.series &&
-				item.size === currentWatch.value.caseSize
+				(item.size == currentWatch.value.caseSize ?? currentWatch.value.size)
 		);
 	}
 	const setSlideItemsToBands = async () => {
@@ -139,7 +144,8 @@ export const useWatchStore = defineStore('watch', () => {
 					acc.push(item)
 				}
 				return acc
-			}, [])
+			}, []);
+
 	}
 	return {
 		state,
@@ -164,5 +170,10 @@ export const useWatchStore = defineStore('watch', () => {
 		setSlideItemsToCase,
 		setSlideItemsToBands,
 		setSlideItemsToSizes,
+		availableBandBrand,
+		availableBandMaterial,
+		availableCases,
+		availableSizes,
+		activeIndex
 	}
 })

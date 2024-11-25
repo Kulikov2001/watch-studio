@@ -4,9 +4,18 @@
 		<div class="top-menu-container">
 			<a href="https://lyambda.com">
 				<img
-					:src="'https://www.lyambda.com/wp-content/themes/lyambda/image/logo.png'"
+					:src="'https://lyambda.ez-studio.ru/wp-content/themes/lyambda/image/logo.png'"
 					alt="Lyambda"
-			/></a>
+					height="25"
+					class="logo-big"
+			/>
+				<img
+					:src="'https://lyambda.ez-studio.ru/wp-content/themes/lyambda/image/logo-mobile.svg'"
+					alt="Lyambda"
+					height="25"
+					class="logo-small"
+				/>
+			</a>
 			<!--div name="collection" id="collection">
         <button class="collection-btn" @click="collectionToggle">Коллекции</button>
         <div v-if="collectionsActive" class="collection__list">
@@ -22,8 +31,8 @@
           </TransitionGroup>
         </div>
       </div-->
-			<button :disabled="!!sku" @click="emitSave" class="more-btn">
-				Подробнее
+			<button @click="emitSave" class="more-btn in-header">
+				Посмотреть товар
 			</button>
 		</div>
 	</div>
@@ -39,7 +48,7 @@ const emit = defineEmits<{
 	(e: 'save'): void
 }>()
 const emitSave = async () => {
-	window.location.href = `https://lyambda.com/?s=${store.currentWatch.sku_band}`
+	window.location.href = `https://lyambda.ez-studio.ru/?s=${store.currentWatch.sku_band}`
 	emit('save')
 }
 </script>
@@ -72,13 +81,37 @@ const emitSave = async () => {
 	}
 }
 .more-btn{
-	background: #007aff; font-size: 24px; padding: .7em 1.3em; border-radius: 1.5em; cursor: pointer; color: white;
-	transition: background .224s ease;
+	background: rgba(205, 182, 99, 0);
+	outline:none;
+	box-shadow: none;
+	border: 1px solid #CDB663;
+	color: #CDB663;
+	font-size: 24px; padding: .7em 1.3em; border-radius: 1.5em; cursor: pointer;
+	transition: all .224s ease;
 	&:hover{
-		background: #005bc4;
+		background: linear-gradient(74deg, rgba(70,46,15,1) 0%, rgb(205, 182, 99) 48%, rgba(70,46,15,1) 90%);
+		color: white;
+		border: 1px solid transparent;
 	}
-	&[disabled="true"]{
-		background: #cccccc;
+	//&[disabled="true"]{
+	//	background: #cccccc;
+	//}
+}
+.more-btn.in-header{
+	display:none;
+}
+.logo-small{
+	display:none;
+}
+@media screen and (max-width: 240px) {
+	.more-btn.in-header{
+		display:block;
+	}
+	.logo-big{
+		display: none;
+	}
+	.logo-small{
+		display: block;
 	}
 }
 </style>

@@ -10,8 +10,10 @@ import {useWatchStore} from "@/stores/useWatchStore";
 //const router = useRouter();
 const store = useWatchStore();
 onMounted(()=>{
+	store.state = 2;
 	store.setSlideItemsToSizes();
-	store.state = 2
+	store.currentWatch.size = store.slideItems[0].size??'49';
+	store.currentWatch.caseSize = store.slideItems[0].size??'49';
 })
 </script>
 

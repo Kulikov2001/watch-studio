@@ -10,9 +10,9 @@ import {useWatchStore} from "@/stores/useWatchStore";
 //const router = useRouter();
 const store = useWatchStore();
 onMounted(()=>{
-	store.setSlideItemsToCase();
+	setTimeout(()=>store.setSlideItemsToCase(),300);
 	store.state = 3;
-	store.currentWatch!.series! = sessionStorage.getItem('series')??'';
+	//store.currentWatch!.series! = sessionStorage.getItem('series')??'';
 })
 </script>
 

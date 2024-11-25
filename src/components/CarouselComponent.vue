@@ -16,7 +16,7 @@
 			:initialSlide="2"
 			:slideToClickedSlide="true"
 			:speed="500"
-			:breakpoints="{ 1200: { slidesPerView: 5 }, 800: { slidesPerView: 3 }, 200: {slidesPerView: 1} }"
+			:breakpoints="{ 1300: { slidesPerView: 5 }, 800: { slidesPerView: 3 }, 200: {slidesPerView: 1} }"
 		>
 			<img
 				height="300"
@@ -77,12 +77,12 @@
 			</swiper-slide>
 			<div
 				class="swiper-button-prev bigswiper__btn"
-				@click.stop="swiperRef.slidePrev()"
+
 				slot="button-prev"
 			></div>
 			<div
 				class="swiper-button-next bigswiper__btn"
-				@click.stop="swiperRef.slideNext()"
+
 				slot="button-next"
 			></div>
 		</swiper>
@@ -100,7 +100,7 @@
 			style="margin: 0 auto; width: 100%; user-select: none"
 			:centeredSlides="true"
 			:lazyPreloadPrevNext="4"
-			:initialSlide="3"
+			:initialSlide="9"
 			:slideToClickedSlide="true"
 			:speed="501"
 			:breakpoints="{
@@ -137,12 +137,12 @@
 			</swiper-slide>
 			<div
 				class="swiper-button-prev bigswiper__btn"
-				@click.stop="swiperRef2.slidePrev()"
+
 				slot="button-prev"
 			></div>
 			<div
 				class="swiper-button-next bigswiper__btn"
-				@click.stop="swiperRef2.slideNext()"
+
 				slot="button-next"
 			></div>
 		</swiper>
@@ -188,7 +188,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useWatchStore, State } from '@/stores/useWatchStore'
-import { computed, ref, toRefs, watch } from 'vue'
+import {computed, onMounted, ref, toRefs, watch} from 'vue'
 import { EffectFade } from 'swiper/modules'
 import type {ISlideItem} from "@/stores/useWatchStore";
 import router from "@/router";
@@ -251,7 +251,8 @@ watch(
 const route = useRoute();
 //const slideItems = computed(() => slideItems.value)
 const onSlideChange = (swiper: any) => {
-	if (watchStore.currentWatch && slideItems.value.length >= 2) {
+	//watchStore.activeIndex = swiper.activeIndex;
+	if (watchStore.currentWatch && slideItems.value.length >= 1) {
 		watchStore.currentWatch.size = slideItems.value[swiper.activeIndex].size ?? '41'
 		if (route.path === '/bands') {
 			watchStore.currentWatch.desc = slideItems.value[swiper.activeIndex].desc ?? 'desc'
@@ -268,6 +269,8 @@ const onSlideChange = (swiper: any) => {
 		} else if (route.path === '/series') {
 			watchStore.currentWatch.series! = slideItems.value[swiper.activeIndex].name!
 		} else if (route.path === '/size') {
+			console.log(slideItems.value);
+			console.log(swiper.activeIndex);
 			watchStore.currentWatch.caseSize = slideItems.value[swiper.activeIndex].size
 		}
 	} else {
@@ -326,11 +329,17 @@ const adaptiveSize = computed(
 //     break;
 //   }
 // });
-
+onMounted(()=>{
+	//alert('carusel mounted')
+	onSlideChange({activeIndex: 0})
+})
 const storeCase = computed(() => watchStore.getSelfPics().case.src)
 const storeBand = computed(() => watchStore.getSelfPics().band.src)
 </script>
 <style scoped>
+.bigswiper__btn{
+	z-index: 2;
+}
 .fade-out {
 	opacity: 0;
 }
@@ -369,17 +378,17 @@ _38to40 {
 	justify-content: center;
 	align-items: center;
 }
-
+/*
 @media screen and (max-width: 1200px) {
 	.pinned-img {
 		left: 33.334%;
 	}
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 310px) {
 	.pinned-img {
 		left: 0;
 	}
-}
+}*/
 .selected-series {
 	width: 100%;
 	margin: 2em auto;

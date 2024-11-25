@@ -23,26 +23,25 @@
 				:slides-per-view="1"
 				:centeredSlides="true"
 				:breakpoints="{ 1000: { slidesPerView: 3 } }"
+				:slideToClickedSlide="true"
 			>
 				<swiper-slide
 					v-for="(item, index) in additional"
+					@click="handleAdditionalSlideClick(item)"
 					:key="index"
 					style="padding: 0 0.2em"
-					@click="handleSwiperClick($event)"
 				>
-					<b :id="`${props.name}-item`" v-if="watchStore.currentWatch.series === item">{{
+					<b :id="`${props.name}-item`" v-if="watchStore.currentWatch.brand === item">{{
 						item
 					}}</b>
 					<span :id="`${props.name}-item`" v-else>{{ item }}</span>
 				</swiper-slide>
 				<div
-					class="swiper-button-prev bigswiper__btn"
-					@click="swiperRefAdditional.slidePrev()"
+					class="swiper-button-prev bigswiper__btn footer-btn"
 					slot="button-prev"
 				></div>
 				<div
-					class="swiper-button-next bigswiper__btn"
-					@click="swiperRefAdditional.slideNext()"
+					class="swiper-button-next bigswiper__btn footer-btn"
 					slot="button-next"
 				></div>
 			</swiper>
@@ -56,7 +55,7 @@
 				ref="swiperRefMenu"
 				:slides-per-view="1"
 				:centeredSlides="true"
-				:breakpoints="{ 1000: { slidesPerView: 3 } }"
+				:slideToClickedSlide="true"
 			>
 				<swiper-slide
 					v-for="(item, index) in menuItems"
@@ -70,13 +69,13 @@
 					<span :id="`${props.name}-item`" v-else>{{ item }}</span>
 				</swiper-slide>
 				<div
-					class="swiper-button-prev bigswiper__btn"
-					@click="swiperRefMenu.slidePrev()"
+
+					class="swiper-button-prev bigswiper__btn footer-btn"
 					slot="button-prev"
 				></div>
 				<div
-					class="swiper-button-next bigswiper__btn"
-					@click="swiperRefMenu.slideNext()"
+
+					class="swiper-button-next bigswiper__btn footer-btn"
 					slot="button-next"
 				></div>
 			</swiper>
@@ -85,11 +84,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import {computed, onMounted, ref} from 'vue'
 import { State, useWatchStore } from '@/stores/useWatchStore'
 import { EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import {useRouter} from "vue-router";
+import {caseDict} from "@/assets/newCase";
+import {bandDict} from "@/assets/newBands";
 
 // Import Swiper styles
 //import 'swiper/css';
@@ -98,7 +99,9 @@ import {useRouter} from "vue-router";
 //import 'swiper/css/scrollbar';
 const modules = [Navigation, Pagination, Scrollbar, EffectFade]
 
-const watchStore = useWatchStore()
+const watchStore = useWatchStore();
+//const activeIndex = computed(()=> watchStore.activeIndex);
+//const carouselSlidesLength = computed(()=> watchStore.slideItems.length);
 const props = defineProps<{
 	name: string
 	title: string
@@ -125,19 +128,59 @@ const onSwiperAdditionalMenu = (swiper: any) => {
 const handleBtnClick = async (event: Event) => {
 	emit('btnClick', event)
 }
-const handleSwiperClick = async (event: Event) => {
+const handleSwiperClick = async (event: any) => {
 	emit('swiperClick', event)
 }
-const handleSwiperSlideClick = async(item: any)=>{
-	const idx = watchStore.slideItems.findIndex(slide => slide.name === item);
-	watchStore.gotoslide = idx >= 0 ? idx : 0;
-}
+
 const name = ref<string>(props.name)
 const title = ref<string>(props.title)
 const swiperRefMenu: any = ref(null)
 const swiperRefAdditional: any = ref(null)
 const router = useRouter();
 const elState = computed(()=> router.currentRoute.value.meta.name);
+const currItem = computed(() => {
+	switch (elState.value) {
+		// case 'series':
+		// 	return
+		// case 'size':
+		// 	return State.SIZE_CHOICE
+		// case 'case':
+		// 	return State.CASE_CHOICE
+		case 'band':
+			return function sayhello(hello) {
+				alert(hello);
+			}
+		default:
+			console.error(
+				'Invalid parse props.name in component ' + props.name + 'elState returned 0'
+			)
+			return 0
+	}
+})
+const availableSizes: any = computed(()=> watchStore.availableSizes);
+const availableCases: any = computed(()=> watchStore.availableCases);
+const availableBandBrand: any = computed(()=> watchStore.availableBandBrand);
+const availableBandMaterial: any = computed(()=> watchStore.availableBandMaterial);
+const handleSwiperSlideClick = async(item: any)=>{
+	let idx;
+	if (elState.value === 'case') {
+		idx = watchStore.slideItems.findIndex(slide => slide.color === Object.keys(caseDict).find(key => caseDict[key] === item));
+	} else if (elState.value === 'band'){
+		idx = watchStore.slideItems.findIndex(slide => slide.brand === Object.keys(bandDict).find(key => bandDict[key] === item) || slide.material === Object.keys(bandDict).find(key => bandDict[key] === item));
+	} else if (elState.value === 'size') {
+		idx = watchStore.slideItems.findIndex(slide => slide.size === item);
+	} else {
+		idx = watchStore.slideItems.findIndex(slide => slide.name === item);
+	}
+	watchStore.gotoslide = idx >= 0 ? idx : 0;
+}
+const handleAdditionalSlideClick = async(item: any) => {
+	let idx;
+	if (elState.value === 'band'){
+		idx = watchStore.slideItems.findIndex(slide => slide.brand === item);
+	}
+	watchStore.gotoslide = idx >= 0 ? idx : 0;
+}
 // const elState = computed(() => {
 // 	switch (props.name) {
 // 		case 'series':
@@ -176,6 +219,10 @@ button {
 	font-family: Arial, Montserat, Verdana, sans-serif;
 }
 .swipersBtn{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 	max-width: 75%;
 }
 .list-enter-active {
@@ -274,9 +321,6 @@ b[id$='item'] {
 	width: 400px;
 	min-width: 0;
 }
-section.swipersBtn{
-	display: inline-flex;
-}
 :root {
 	--swiper-navigation-color: #989898 !important;
 }
@@ -289,6 +333,7 @@ section.swipersBtn{
 .bigswiper__btn {
 	background: #ebebeb;
 	border-radius: 100%;
+
 	color: #989898;
 	/*scale: .5;*/
 	padding: 30px;
@@ -297,5 +342,8 @@ section.swipersBtn{
 	height: 15px;
 	overflow: hidden;
 	scale: 0.5;
+}
+.bigswiper__btn.footer-btn{
+	box-shadow: 0px 0px 0px 53px #ebebeb;
 }
 </style>

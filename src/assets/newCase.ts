@@ -1293,6 +1293,71 @@ export const newCase = [
 		series: 'Серия 9',
 		color: 'midnight',
 		material: 'aluminum'
+	},
+	{
+		pic: '/size-series/Ultra/Ultra.webp',
+		sku: '49_S9_Midnight_al',
+		size: '49',
+		series: 'Ultra',
+		color: 'midnight',
+		material: 'aluminum'
+	},
+	{
+		pic: '/size-series/Ultra 2/Ultra 2.webp',
+		sku: '49_S9_Midnight_al',
+		size: '49',
+		series: 'Ultra 2',
+		color: 'midnight',
+		material: 'aluminum'
+	},
+	{
+		sku: '40_SE2_Midnight_al',
+		size: '40',
+		series: 'Серия SE (2-ое поколение)',
+		color: 'midnight',
+		material: 'aluminum',
+		pic: '/public/size-series/Серия SE (2nd generation)/40/40_SE2_Midnight_al.webp',
+	},
+	{
+		sku: '40_SE2_Silver_al',
+		size: '40',
+		series: 'Серия SE (2-ое поколение)',
+		color: 'silver',
+		material: 'aluminum',
+		pic: '/public/size-series/Серия SE (2nd generation)/40/40_SE2_Silver_al.webp',
+	},
+	{
+		sku: '40_SE2_Starlight_al',
+		size: '40',
+		series: 'Серия SE (2-ое поколение)',
+		color: 'starlight',
+		material: 'aluminum',
+		pic: '/public/size-series/Серия SE (2nd generation)/40/40_SE2_Starlight_al.webp',
+	},
+	{
+		sku: '44_SE2_Starlight_al',
+		size: '44',
+		series: 'Серия SE (2-ое поколение)',
+		color: 'starlight',
+		material: 'aluminum',
+		pic: '/public/size-series/Серия SE (2nd generation)/44/44_SE2_Starlight_al.webp',
+	},
+	{
+		sku: '44_SE2_Midnight_al',
+		size: '44',
+		series: 'Серия SE (2-ое поколение)',
+		color: 'midnight',
+		material: 'aluminum',
+		pic: '/public/size-series/Серия SE (2nd generation)/44/44_SE2_Midnight_al.webp',
+	}
+	,
+	{
+		sku: '44_SE2_Silver_al',
+		size: '44',
+		series: 'Серия SE (2-ое поколение)',
+		color: 'silver',
+		material: 'aluminum',
+		pic: '/public/size-series/Серия SE (2nd generation)/44/44_SE2_Silver_al.webp',
 	}
 ]
 export const caseDict = {
