@@ -85,7 +85,9 @@ const emitSave = async () => {
 	box-shadow: none;
 	border: 1px solid #C1A656;
 	color: #C1A656;
-	font-size: 24px; padding: .7em 1.3em; border-radius: 1.5em; cursor: pointer;
+	max-width: 500px;
+	width: 100%;
+	font-size: 16px; padding: .7em 1.3em; border-radius: 1.5em; cursor: pointer;
 	transition: all .224s ease;
 	&:hover{
 		background: linear-gradient(74deg, rgba(70,46,15,1) 0%, rgba(208,180,93,1) 48%, rgba(70,46,15,1) 90%);

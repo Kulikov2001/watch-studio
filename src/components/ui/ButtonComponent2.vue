@@ -222,8 +222,8 @@ button {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
-	max-width: 75%;
+	gap: 25px;
+	/*max-width: 75%;*/
 }
 .list-enter-active {
 	/*,
@@ -318,7 +318,8 @@ b[id$='item'] {
 	padding: 0;
 }
 .swiper__wrapper{
-	width: 400px;
+	max-width: 400px;
+	width: 100%;
 	min-width: 0;
 }
 :root {

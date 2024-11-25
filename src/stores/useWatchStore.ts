@@ -97,15 +97,15 @@ export const useWatchStore = defineStore('watch', () => {
 		try{
 		result.band.src = newBands.filter((obj) => obj.sku === currentWatch.value.sku_band)[0].pic
 		}catch(e){
-			console.error('band pic error');
-			console.error(e);
+			console.info('band pic go to default');
+			console.info(e);
 			result.band.src = newBands[0].pic.toString()
 		}
 		try{
 			result.case.src = newCase.filter((obj) => obj.sku === currentWatch.value.sku_case)[0].pic
 		} catch(e){
-			console.error('band pic error');
-			console.error(e);
+			console.info('case go to default');
+			console.info(e);
 			result.case.src = newCase[0].pic.toString()
 		}
 			return result

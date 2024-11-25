@@ -158,7 +158,7 @@
 				{{ watchStore.currentWatch.caseSize }}мм
 				<!-- watchStore.colorDict.hasOwnProperty(watchStore.currentWatch.caseColor) ? watchStore.colorDict[watchStore.currentWatch.caseColor]  : '' }},-->
 			</div>
-			<div class="desc" v-show="watchStore.state === State.BAND_CHOICE">
+			<div @click="gotolyamda" style="cursor:pointer;" class="desc" v-show="watchStore.state === State.BAND_CHOICE">
 				{{
 					watchStore.adjectiveMaterialDict[watchStore.currentWatch.bandMaterial!] ??
 					'Премиум'
@@ -249,11 +249,14 @@ watch(
 	}
 )
 const route = useRoute();
+const gotolyamda = async()=>{
+	window.location.href = `https://lyambda.ez-studio.ru/?s=${watchStore.currentWatch.sku_band??''}`
+}
 //const slideItems = computed(() => slideItems.value)
 const onSlideChange = (swiper: any) => {
 	//watchStore.activeIndex = swiper.activeIndex;
 	if (watchStore.currentWatch && slideItems.value.length >= 1) {
-		watchStore.currentWatch.size = slideItems.value[swiper.activeIndex].size ?? '41'
+
 		if (route.path === '/bands') {
 			watchStore.currentWatch.desc = slideItems.value[swiper.activeIndex].desc ?? 'desc'
 			watchStore.currentWatch.brand = slideItems.value[swiper.activeIndex].brand ?? ''
@@ -269,8 +272,7 @@ const onSlideChange = (swiper: any) => {
 		} else if (route.path === '/series') {
 			watchStore.currentWatch.series! = slideItems.value[swiper.activeIndex].name!
 		} else if (route.path === '/size') {
-			console.log(slideItems.value);
-			console.log(swiper.activeIndex);
+			watchStore.currentWatch.size = slideItems.value[swiper.activeIndex].size ?? '41'
 			watchStore.currentWatch.caseSize = slideItems.value[swiper.activeIndex].size
 		}
 	} else {
